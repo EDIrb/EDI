@@ -1,4 +1,4 @@
-# Jarvis CLI
+# Jarvis CLI [![Build Status](https://travis-ci.org/DVG/jarvis-cli.svg?branch=master)](https://travis-ci.org/DVG/jarvis-cli)
 
 ## Warning, these instructions are not true yet, but they will be!
 
