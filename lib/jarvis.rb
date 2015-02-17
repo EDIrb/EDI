@@ -15,5 +15,9 @@ module Jarvis
       args.each { |klass| services << klass}
     end
 
+    def clear_services
+      @services = []
+    end
+
   end
 end

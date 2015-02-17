@@ -2,16 +2,13 @@ require 'spec_helper'
 
 RSpec.describe Jarvis::Service do
 
-  before(:all) do
-    class MyService < Jarvis::Service
-      required_environment "SERVICE_TOKEN"
-    end
-    class MyOtherService < Jarvis::Service
-      required_environment "SERVICE_TOKEN", "SERVICE_SECRET"
-    end
-  end
-
   describe "Validate Environment Variables are Present" do
+    before(:all) do
+      create_service("MyService")
+      MyService.required_environment "SERVICE_TOKEN"
+      create_service("MyOtherService")
+      MyOtherService.required_environment "SERVICE_TOKEN", "SERVICE_SECRET"
+    end
     subject { MyService.new }
     context "Required Environment not set up" do
       it { expect { subject.validate_environment }.to raise_exception(Jarvis::UnfitEnvironmentException) }
@@ -29,13 +26,20 @@ RSpec.describe Jarvis::Service do
       it { expect { subject.validate_environment }.to raise_exception(Jarvis::UnfitEnvironmentException) }
       after { ENV["SERVICE_TOKEN"] = nil }
     end
+    after(:all) do
+      # Clean Up Class Definitions
+      undefine_constant :MyService
+      undefine_constant :MyOtherService
+    end
   end
 
+  describe "Expose Pattern For the Service to be Interpreted" do
+    before(:all) { create_service("MyService") }
+    before { MyService.interpreter_pattern = /are you up/i }
+    it { expect(MyService.interpreter_pattern).to eq /are you up/i }
+    after(:all) { undefine_constant :MyService }
 
-  after(:all) do
-    # Clean Up Class Definitions
-    Object.send(:remove_const, :MyService)
-    Object.send(:remove_const, :MyOtherService)
   end
+
 
 end
