@@ -11,8 +11,8 @@ module Jarvis
       @services ||= []
     end
 
-    def register(klass)
-      services << klass
+    def register_services(*args)
+      args.each { |klass| services << klass}
     end
 
   end

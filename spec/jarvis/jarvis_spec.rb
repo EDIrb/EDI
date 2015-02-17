@@ -6,7 +6,7 @@ RSpec.describe Jarvis do
     it "Allows you to register a Jarvis::Service subclass" do
       class MyRegisteredService < Jarvis::Service
       end
-      Jarvis.register(MyRegisteredService)
+      Jarvis.register_services(MyRegisteredService)
       expect(Jarvis.services).to eq [MyRegisteredService]
     end
   end
