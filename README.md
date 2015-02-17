@@ -6,7 +6,7 @@
 
 Add this line to your application's Gemfile:
 
-    gem 'jarvis_server', require: 'jarvis'
+    gem 'jarvis-cli', require: 'jarvis'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install jarvis_server
+    $ gem install jarvis-cli
 
 ## Usage
 

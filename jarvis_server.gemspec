@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'jarvis/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "jarvis_server"
+  spec.name          = "jarvis-cli"
   spec.version       = Jarvis::VERSION
   spec.authors       = ["DVG"]
   spec.email         = ["bradley.temple@gmail.com"]
