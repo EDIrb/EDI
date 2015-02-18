@@ -20,6 +20,8 @@ private
         code
       end
       determine_service += <<-code
+          else
+            NullService
           end
         end
       code

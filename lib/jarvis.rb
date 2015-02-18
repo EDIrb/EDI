@@ -5,6 +5,7 @@ require 'jarvis/server'
 require 'jarvis/service'
 require 'jarvis/exceptions'
 require 'jarvis/interpreter'
+require 'jarvis/services'
 
 module Jarvis
   class << self
