@@ -1,5 +1,6 @@
 RSpec.shared_context "service" do
   let(:service) { TestService }
+  let(:other_service) { OtherTestService }
  end
 
 module ServiceContext
