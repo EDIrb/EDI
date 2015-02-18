@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-Jarvis is an application framework for building Chat bots to integrate with your Slack chatroom. It ships with a number of useful and funny built-in services, but it also provides and easy DSL for creating your own services.
+Jarvis is an application framework for building Chat bots to integrate with your Slack chat room. It ships with a number of useful and funny built-in services, but it also provides and easy DSL for creating your own services.
 
 ### Generating a new chat bot
 
@@ -34,7 +34,7 @@ $ jarvis new my-bot
 
 ```ruby
 class MyBot < Jarvis::Server
-  register_services Twitter, ImgFlip, UrbanDictionary, Weather
+  register_services :twitter, :img_flip, :urban_dictionary, :weather
 end
 ```
 
