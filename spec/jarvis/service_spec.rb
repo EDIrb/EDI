@@ -38,7 +38,22 @@ RSpec.describe Jarvis::Service do
     before { MyService.interpreter_pattern = /are you up/i }
     it { expect(MyService.interpreter_pattern).to eq /are you up/i }
     after(:all) { undefine_constant :MyService }
+  end
 
+  describe "Allow the Developer to make a list of phrases to be concatenated into the interpreter pattern" do
+    before{ create_service("MyService") }
+
+    context "Accepts a single phrase" do
+      before { MyService.phrases = "success kid" }
+      it { expect(MyService.interpreter_pattern).to eq /success kid/i }
+    end
+
+    context "Accepts multiple phrases" do
+      before { MyService.phrases = "success kid", "hello world" }
+      it { expect(MyService.interpreter_pattern).to eq /success kid|hello world/i }
+    end
+
+    after { undefine_constant :MyService }
   end
 
 

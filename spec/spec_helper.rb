@@ -3,6 +3,7 @@ require 'rspec'
 require 'rack/test'
 require 'json'
 require 'jarvis'
+require 'byebug'
 
 include Rack::Test::Methods
 
