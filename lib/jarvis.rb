@@ -2,6 +2,7 @@ require "jarvis/version"
 require 'jarvis/server'
 require 'jarvis/service'
 require 'jarvis/exceptions'
+require 'jarvis/interpreter'
 
 module Jarvis
   class << self
