@@ -15,8 +15,6 @@ module Jarvis
         case phrases
         when Array then /#{phrases.join("|")}/i
         when String then /#{phrases}/i
-        else
-          raise "WTF"
         end
 
       end

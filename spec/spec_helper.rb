@@ -24,6 +24,14 @@ class TestService < Jarvis::Service
   end
 end
 
+class OtherTestService < Jarvis::Service
+  def self.reset!
+    self.required_environment_variables = nil
+    self.interpreter_pattern = nil
+    self.phrases = nil
+  end
+end
+
 def app
   Jarvis::Server
 end

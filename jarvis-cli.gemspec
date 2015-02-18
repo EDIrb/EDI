@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "sinatra-contrib"
   spec.add_dependency "httparty"
   spec.add_dependency "thor"
+  spec.add_dependency "activesupport"
 end
