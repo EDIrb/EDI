@@ -1,4 +1,5 @@
-require 'active_support/inflector'
+require 'active_support'
+require 'jarvis/core_ext'
 require "jarvis/version"
 require 'jarvis/server'
 require 'jarvis/service'

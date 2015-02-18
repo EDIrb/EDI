@@ -14,7 +14,7 @@ private
           case text
       code
       Jarvis.services.each do |service|
-        constant = convert_symbol_to_constant(service)
+        constant = service.constantize
         determine_service += <<-code
           when #{constant.interpreter_pattern.inspect} then #{constant}
         code
@@ -24,10 +24,6 @@ private
         end
       code
       self.class_eval determine_service
-    end
-
-    def self.convert_symbol_to_constant(sym)
-      sym.to_s.camelize.constantize
     end
   end
 end
