@@ -11,7 +11,7 @@ RSpec.describe Jarvis::Server do
 
   describe "unfit environment" do
     let(:slack_message) { slack_outgoing_message(text: "Jarvis, success kid blah blah blah") }
-    before { service.required_environment "BLAH" }
+    before { service.environment :blah }
     before { service.phrases = "success kid" }
     before { Jarvis.register_services :test_service }
     before { post "/jarvis", slack_message }

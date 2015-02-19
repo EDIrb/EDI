@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe Jarvis::Service do
   let(:message) { double("Slack::Message") }
   describe "Validate Environment Variables are Present" do
-    before { service.required_environment "SERVICE_TOKEN" }
+    before { service.environment :service_token }
     subject { service.new message }
     context "Required Environment not set up" do
       it { expect { subject.validate_environment }.to raise_exception(Jarvis::UnfitEnvironmentException) }
@@ -16,7 +16,7 @@ RSpec.describe Jarvis::Service do
     end
 
     context "Multiple Required Variables, Some not present" do
-      before { service.required_environment "SERVICE_TOKEN", "SERVICE_SECRET" }
+      before { service.environment :service_token, :service_secret }
       before { ENV["SERVICE_TOKEN"] = "token" }
       it { expect { subject.validate_environment }.to raise_exception(Jarvis::UnfitEnvironmentException) }
       after { ENV["SERVICE_TOKEN"] = nil }
@@ -39,6 +39,14 @@ RSpec.describe Jarvis::Service do
       it { expect(service.interpreter_pattern).to eq /success kid|hello world/i }
 
     end
+  end
+
+  describe "Environment Accessor" do
+    before { service.environment :service_token }
+    before { ENV["SERVICE_TOKEN"] = "token" }
+    subject { service.new message }
+    it { expect(subject.service_token).to eq "token"}
+    after { ENV["SERVICE_TOKEN"] = nil }
   end
 
 

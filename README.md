@@ -46,11 +46,11 @@ If a Service integrates with an authenticated, third party API, you may need to 
 
 ```ruby
 class MyService < Jarvis::Service
-  required_environment "SERVICE_TOKEN", "SERVICE_SECRET"
+  environment :service_token, :service_secret
 end
 ```
 
-If a service is Registered in `app/server.rb` but does not have it's expected environment, Jarvis will throw an exception and respond with a polite refusal to execute the service. This message can be set in your Jarvis configuration.
+If a service is Registered in `app/server.rb` but does not have it's expected environment, Jarvis will throw an exception and respond with a polite refusal to execute the service. This message can be set in your Jarvis configuration. The enviornment method will also create a getter method for each environment variable.
 
 ### Service Routing
 
