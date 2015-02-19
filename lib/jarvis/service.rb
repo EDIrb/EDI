@@ -1,9 +1,12 @@
+require 'hooks'
 module Jarvis
   class Service
+    include Hooks
 
-    attr_accessor :message
+    attr_accessor :message, :response
     def initialize(message)
       @message = message
+      @response = ""
     end
 
     def method_missing(name, *args, &blk)
@@ -22,6 +25,7 @@ module Jarvis
       end
     end
 
+    # Class Methods
     class << self
       attr_accessor :required_environment_variables, :interpreter_pattern, :phrases
 
@@ -29,7 +33,7 @@ module Jarvis
         @phrases = args
         reset_interpreter_pattern
       end
-      
+
       def required_environment_variables
         @required_environment_variables ||= []
       end
@@ -37,7 +41,7 @@ module Jarvis
       def environment(*args)
         args.each do |sym|
           str = sym.to_s.upcase
-          self.send(:define_method, sym) do
+          create_instance_method sym do
             ENV[str]
           end
           required_environment_variables << str
@@ -48,7 +52,23 @@ module Jarvis
         @interpreter_pattern ||= concatenate_phrases_into_regex
       end
 
+      # class MyService < Jarvis::Service
+      #   invoke_with :post_tweet
+      #
+      # end
+      def invoke_with(method_name)
+        create_instance_method(:invoke) do
+          #self.run_hook :before_invoke
+          self.send method_name
+          #self.run_hook :after_invoke
+        end
+      end
+
     private
+
+      def create_instance_method(name, &blk)
+        self.send(:define_method, name, blk)
+      end
 
       def concatenate_phrases_into_regex
         case phrases

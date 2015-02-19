@@ -49,5 +49,17 @@ RSpec.describe Jarvis::Service do
     after { ENV["SERVICE_TOKEN"] = nil }
   end
 
+  describe "invoke_with" do
+    before do
+      class TestService < Jarvis::Service
+        invoke_with :run
+        def run
+          "Hello World"
+        end
+      end
+    end
+    it { expect(service.new(message).invoke).to eq "Hello World" }
+  end
+
 
 end
