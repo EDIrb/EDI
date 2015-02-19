@@ -1,10 +1,13 @@
 require 'spec_helper'
 
 RSpec.describe Jarvis::Interpreter do
+  def message(params)
+    Slack::Message.new(slack_outgoing_message(params))
+  end
 
   describe "Defaults to NullService" do
     before { Jarvis.register_services :test_service }
-    subject { described_class.new("success kid") }
+    subject { described_class.new(message text: "success kid") }
     it { expect(subject.determine_service).to eq NullService }
   end
 
@@ -12,22 +15,22 @@ RSpec.describe Jarvis::Interpreter do
     before { service.phrases = "success kid" }
     before { Jarvis.register_services :test_service }
     context "A Match" do
-      subject { described_class.new("success kid") }
+      subject { described_class.new(message text: "success kid") }
       it { expect(subject.determine_service).to eq service }
     end
     context "No Match" do
-      subject { described_class.new("blah") }
+      subject { described_class.new(message text: "blah") }
       it { expect(subject.determine_service).to eq NullService }
     end
     context "Generated regex is case insensitive" do
-      subject { described_class.new("SUCCESS KID") }
+      subject { described_class.new(message text: "SUCCESS KID") }
       it { expect(subject.determine_service).to eq service}
     end
     context "Multiple phrases route correctly" do
       before(:each) { other_service.phrases = "overly attached bot", "hello world" }
       before { Jarvis.register_services :other_test_service }
-      it { expect(described_class.new("hello world").determine_service).to eq other_service }
-      it { expect(described_class.new("overly attached bot").determine_service).to eq other_service }
+      it { expect(described_class.new(message text: "hello world").determine_service).to eq other_service }
+      it { expect(described_class.new(message text: "overly attached bot").determine_service).to eq other_service }
     end
   end
 
@@ -35,11 +38,11 @@ RSpec.describe Jarvis::Interpreter do
     before { service.interpreter_pattern = /success kid/i }
     before { Jarvis.register_services :test_service }
     context "A Match" do
-      subject { described_class.new("success kid") }
+      subject { described_class.new(message text: "success kid") }
       it { expect(subject.determine_service).to eq service }
     end
     context "No Match" do
-      subject { described_class.new("blah") }
+      subject { described_class.new(message text: "blah") }
       it { expect(subject.determine_service).to eq NullService }
     end
   end
@@ -51,7 +54,7 @@ RSpec.describe Jarvis::Interpreter do
     before { incorrect_service.interpreter_pattern = /overly attached chatbot/i }
     before { Jarvis.register_services :test_service, :other_test_service }
     context "Routes to Test Service" do
-      subject { described_class.new("success kid hello, world") }
+      subject { described_class.new(message text: "success kid hello, world") }
       it { expect(subject.determine_service).to eq correct_service }
     end
   end
