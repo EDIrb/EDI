@@ -10,16 +10,14 @@ RSpec.describe Jarvis::Service do
     end
 
     context "Environment Correctly Set Up" do
-      before { ENV["SERVICE_TOKEN"] = "token" }
+      before { stub_env("SERVICE_TOKEN" => "token") }
       it { expect { subject.validate_environment }.to_not raise_exception }
-      after { ENV["SERVICE_TOKEN"] = nil }
     end
 
     context "Multiple Required Variables, Some not present" do
       before { service.environment :service_token, :service_secret }
-      before { ENV["SERVICE_TOKEN"] = "token" }
+      before { stub_env("SERVICE_TOKEN" => "token", "SERVICE_SECRET" => nil) }
       it { expect { subject.validate_environment }.to raise_exception(Jarvis::UnfitEnvironmentException) }
-      after { ENV["SERVICE_TOKEN"] = nil }
     end
   end
 
@@ -43,22 +41,35 @@ RSpec.describe Jarvis::Service do
 
   describe "Environment Accessor" do
     before { service.environment :service_token }
-    before { ENV["SERVICE_TOKEN"] = "token" }
+    before { stub_env("SERVICE_TOKEN" => "token") }
     subject { service.new message }
     it { expect(subject.service_token).to eq "token"}
-    after { ENV["SERVICE_TOKEN"] = nil }
   end
 
   describe "invoke_with" do
-    before do
-      class TestService < Jarvis::Service
-        invoke_with :run
-        def run
-          "Hello World"
+    describe "defaults to run" do
+      before do
+        class TestService < Jarvis::Service
+          def run
+            "Hello World"
+          end
         end
       end
+      it { expect(service.new(message).invoke).to eq "Hello World" }
     end
-    it { expect(service.new(message).invoke).to eq "Hello World" }
+
+    describe "Can be overridden with #invoke_with" do
+      before do
+        class OtherTestService < Jarvis::Service
+          invoke_with :call_me_maybe
+          def call_me_maybe
+            "This is crazy"
+          end
+        end
+      end
+      it { expect(other_service.new(message).invoke).to eq "This is crazy" }
+    end
+
   end
 
 

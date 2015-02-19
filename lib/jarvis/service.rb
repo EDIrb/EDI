@@ -16,9 +16,6 @@ module Jarvis
     def invoke
     end
 
-    def say
-    end
-
     def validate_environment
       self.class.required_environment_variables.each do |v|
         raise UnfitEnvironmentException unless ENV[v]
@@ -27,7 +24,7 @@ module Jarvis
 
     # Class Methods
     class << self
-      attr_accessor :required_environment_variables, :interpreter_pattern, :phrases
+      attr_accessor :required_environment_variables, :interpreter_pattern, :phrases, :invoker
 
       def phrases=(*args)
         @phrases = args
@@ -41,7 +38,7 @@ module Jarvis
       def environment(*args)
         args.each do |sym|
           str = sym.to_s.upcase
-          create_instance_method sym do
+          send :define_method, sym do
             ENV[str]
           end
           required_environment_variables << str
@@ -51,29 +48,23 @@ module Jarvis
       def interpreter_pattern
         @interpreter_pattern ||= concatenate_phrases_into_regex
       end
-
       # class MyService < Jarvis::Service
       #   invoke_with :post_tweet
       #
       # end
       def invoke_with(method_name)
-        create_instance_method(:invoke) do
-          #self.run_hook :before_invoke
-          self.send method_name
-          #self.run_hook :after_invoke
+        send :define_method, :invoke do
+          send method_name
         end
       end
 
-    private
 
-      def create_instance_method(name, &blk)
-        self.send(:define_method, name, blk)
-      end
+      private
 
       def concatenate_phrases_into_regex
-        case phrases
-        when Array then /#{phrases.join("|")}/i
-        when String then /#{phrases}/i
+        case self.phrases
+        when Array then /#{self.phrases.join("|")}/i
+        when String then /#{self.phrases}/i
         end
       end
 
@@ -82,5 +73,7 @@ module Jarvis
       end
     end
 
+    
+    invoke_with :run
   end
 end

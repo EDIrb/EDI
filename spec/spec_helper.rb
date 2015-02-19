@@ -36,6 +36,12 @@ def app
   Jarvis::Server
 end
 
+def stub_env(hash)
+  hash.each do |key, value|
+    allow(ENV).to receive(:[]).with(key) { value }
+  end
+end
+
 def slack_outgoing_message(options={text:"Jarvis, what's going on?"})
   {
     "team_id" => options[:team_id] || "T0001",

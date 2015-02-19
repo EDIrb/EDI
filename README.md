@@ -68,6 +68,54 @@ end
 
 Setting interpreter pattern directly will take precendence over phrases if you include both.
 
+### Running the Service
+
+Services should expose a `run` method. This method will perform whatever actions necessary to fulfill the service and should ultimately return the string that Jarvis will send back to the channel in slack.
+
+A very simple service might look like:
+
+```ruby
+class SortingHat < Jarvis::Service
+  def run
+    [
+      "Gryphondor, where dwell the brave of heart!",
+      "Slytherine, because you are kind of a jerk"
+    ].sample
+  end
+end
+```
+
+If you want to use a more semantic name for your service, you can override the method using `invoke_with`
+
+```ruby
+class IJustMetYou < Jarvis::Service
+  invoke_with :call_me_maybe
+
+  def call_me_maybe
+    "This is crazy, but here's my number, so call me maybe"
+  end
+end
+```
+
+### Callbacks
+
+You can do actions before or after the service is run, but before Jarvis responds. For instance:
+
+```ruby
+class Joke < Jarvis::Service
+  before_invoke :setup
+  invoke_with :punch
+
+  def setup
+    Slack::Post.new(channel_id, "What do you call a fish with no eyes?").send_message
+    sleep 1
+  end
+
+  def punch
+    "A FSH!"
+  end
+end
+```
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/jarvis_server/fork )
