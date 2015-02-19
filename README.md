@@ -52,6 +52,22 @@ end
 
 If a service is Registered in `app/server.rb` but does not have it's expected environment, Jarvis will throw an exception and respond with a polite refusal to execute the service. This message can be set in your Jarvis configuration.
 
+### Service Routing
+
+There are two ways to tell Jarvis to send a given message to a particular service.`interpreter_pattern` and `phrases`
+
+```ruby
+class ImgFlip < Jarvis::Service
+  phrases = "success kid", "overly attached girlfriend"
+  # will converted to a pattern that looks like /success kid|overly attached girlfriend/i
+end
+class SortingHat < Jarvis::Service
+  interpreter_pattern = /sorting hat|where do I belong/i
+end
+```
+
+Setting interpreter pattern directly will take precendence over phrases if you include both.
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/jarvis_server/fork )

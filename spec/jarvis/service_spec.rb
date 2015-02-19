@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 RSpec.describe Jarvis::Service do
-
+  let(:message) { double("Slack::Message") }
   describe "Validate Environment Variables are Present" do
     before { service.required_environment "SERVICE_TOKEN" }
-    subject { service.new }
+    subject { service.new message }
     context "Required Environment not set up" do
       it { expect { subject.validate_environment }.to raise_exception(Jarvis::UnfitEnvironmentException) }
     end

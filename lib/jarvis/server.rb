@@ -11,16 +11,22 @@ module Jarvis
 
     post "/jarvis" do
       message = Slack::Message.new(params)
-      service = Jarvis::Interpreter.new(message).determine_service.new
+      service = Jarvis::Interpreter.new(message).determine_service.new(message)
       begin
-        service.validate_environment
-        service.invoke
-        json text: service.say
+        json text: run_service(service)
       rescue Jarvis::UnfitEnvironmentException => e
         json text: "I'm really sorry, but that sevice needs to be configured"
       rescue => e
-        json text: "Something went wrong"
+        json text: "I'm sorry, Something went wrong"
       end
+    end
+
+private
+
+    def run_service(service)
+      service.validate_environment
+      service.invoke
+      service.say
     end
 
     run! if app_file == $0

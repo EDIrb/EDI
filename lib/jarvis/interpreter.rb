@@ -1,7 +1,8 @@
 module Jarvis
   class Interpreter
-    attr_accessor :text
+    attr_accessor :slack_message, :text
     def initialize(slack_message)
+      @slack_message = slack_message
       @text = slack_message.text
     end
 
