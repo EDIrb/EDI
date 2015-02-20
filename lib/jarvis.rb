@@ -7,8 +7,11 @@ require 'jarvis/exceptions'
 require 'jarvis/interpreter'
 require 'jarvis/services'
 require 'jarvis/slack'
+require 'httparty'
+require 'uri'
 
 module Jarvis
+  include HTTParty
   class << self
 
     attr_accessor :services
@@ -23,6 +26,10 @@ module Jarvis
 
     def clear_services
       @services = []
+    end
+
+    def get(*args, &blk)
+      HTTParty.get(*args, &blk)
     end
 
   end

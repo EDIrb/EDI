@@ -21,6 +21,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "byebug"
+  spec.add_development_dependency "vcr"
+  spec.add_development_dependency "webmock"
   spec.add_dependency "sinatra"
   spec.add_dependency "sinatra-contrib"
   spec.add_dependency "httparty"

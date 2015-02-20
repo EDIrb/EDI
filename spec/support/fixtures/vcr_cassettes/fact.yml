@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://numbersapi.com/random
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Date:
+      - Fri, 20 Feb 2015 05:01:41 GMT
+      Content-Type:
+      - text/plain; charset="UTF-8"; charset=utf-8
+      Content-Length:
+      - '93'
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-Requested-With
+      X-Numbers-Api-Number:
+      - '182'
+      X-Numbers-Api-Type:
+      - trivia
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache
+      Expires:
+      - '0'
+      Proxy-Connection:
+      - Keep-Alive
+      Connection:
+      - Keep-Alive
+      Age:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: 182 is the carat of the Star of Bombay cabochon-cut star sapphire originating
+        from Sri Lanka.
+    http_version: 
+  recorded_at: Fri, 20 Feb 2015 05:01:27 GMT
+recorded_with: VCR 2.9.3

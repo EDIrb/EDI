@@ -4,6 +4,7 @@ require 'rack/test'
 require 'json'
 require 'jarvis'
 require 'byebug'
+require 'vcr'
 require_relative './support/shared_contexts/service'
 require_relative './support/shared_contexts/server'
 
@@ -58,4 +59,10 @@ RSpec.configure do |config|
   end
   config.include ServerContext
   config.include ServiceContext
+end
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/support/fixtures/vcr_cassettes"
+  config.configure_rspec_metadata!
+  config.hook_into :webmock
 end
