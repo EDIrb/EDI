@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe Giphy, vcr: { cassette_name: 'giphy', :record => :new_episodes} do
+  before { stub_env("GIPHY_API_VERSION" => "v1", "GIPHY_API_KEY" => "key") }
   describe "Any old GIF" do
     let(:message) { Slack::Message.new(slack_outgoing_message(text: "Jarvis, a gif please")) }
     subject { described_class.new message }

@@ -16,12 +16,6 @@ def app
   Jarvis::Server
 end
 
-def stub_env(hash)
-  hash.each do |key, value|
-    allow(ENV).to receive(:[]).with(key) { value }
-  end
-end
-
 RSpec.configure do |config|
   config.expose_dsl_globally = false
   config.around(:each) do |example|

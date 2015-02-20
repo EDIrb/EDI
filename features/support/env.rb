@@ -7,6 +7,7 @@ require 'capybara/cucumber'
 require 'vcr'
 require 'webmock'
 require 'jarvis/test_support/test_support'
+require 'jarvis/test_support/cucumber'
 
 
 include Rack::Test::Methods

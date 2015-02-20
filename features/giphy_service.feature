@@ -4,6 +4,9 @@ Feature: Giphy Service
   As a lover of GIFs
   I want Jarvis to return random GIFs from a variety of categories
 
+  Background:
+    Given the environment is configured for Giphy
+
   Scenario: Plain old GIF
     Given a server is running with the giphy service enabled
     When Jarvis recieves the message "Jarvis a gif please"
