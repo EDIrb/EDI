@@ -14,9 +14,16 @@ RSpec.describe Jarvis::Service do
       it { expect { subject.validate_environment }.to_not raise_exception }
     end
 
+    context "tries lowercase environment variable if uppercase isn't present" do
+      before { service.environment :service_token }
+      before { stub_env("SERVICE_TOKEN" => nil, "service_token" => "token")}
+      subject { service.new message }
+      it { expect { subject.validate_environment }.to_not raise_exception }
+    end
+
     context "Multiple Required Variables, Some not present" do
       before { service.environment :service_token, :service_secret }
-      before { stub_env("SERVICE_TOKEN" => "token", "SERVICE_SECRET" => nil) }
+      before { stub_env("SERVICE_TOKEN" => "token", "SERVICE_SECRET" => nil, "service_secret" => nil) }
       it { expect { subject.validate_environment }.to raise_exception(Jarvis::UnfitEnvironmentException) }
     end
   end
@@ -40,10 +47,18 @@ RSpec.describe Jarvis::Service do
   end
 
   describe "Environment Accessor" do
-    before { service.environment :service_token }
-    before { stub_env("SERVICE_TOKEN" => "token") }
-    subject { service.new message }
-    it { expect(subject.service_token).to eq "token"}
+    context "Uppercase" do
+      before { service.environment :service_token }
+      before { stub_env("SERVICE_TOKEN" => "token") }
+      subject { service.new message }
+      it { expect(subject.service_token).to eq "token"}
+    end
+    context "Lowercase" do
+      before { service.environment :service_token }
+      before { stub_env("SERVICE_TOKEN" => nil, "service_token" => "token") }
+      subject { service.new message }
+      it { expect(subject.service_token).to eq "token"}
+    end
   end
 
   describe "invoke_with" do

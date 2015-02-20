@@ -19,7 +19,7 @@ module Jarvis
 
     def validate_environment
       self.class.required_environment_variables.each do |v|
-        raise UnfitEnvironmentException unless ENV[v]
+        raise UnfitEnvironmentException unless (ENV[v] || ENV[v.downcase])
       end
     end
 
@@ -40,7 +40,7 @@ module Jarvis
         args.each do |sym|
           str = sym.to_s.upcase
           send :define_method, sym do
-            ENV[str]
+            ENV[str] || ENV[str.downcase]
           end
           required_environment_variables << str
         end
