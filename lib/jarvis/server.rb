@@ -21,6 +21,10 @@ module Jarvis
       end
     end
 
+    def self.register_services(*args)
+      Jarvis.register_services *args
+    end
+
 private
 
     def run_service(service)

@@ -26,55 +26,55 @@ module Jarvis
     # Class Methods
     class << self
       attr_accessor :required_environment_variables, :interpreter_pattern, :phrases, :invoker
+    end
+    
+    def self.phrases=(*args)
+      @phrases = args
+      reset_interpreter_pattern
+    end
 
-      def phrases=(*args)
-        @phrases = args
-        reset_interpreter_pattern
-      end
+    def self.required_environment_variables
+      @required_environment_variables ||= []
+    end
 
-      def required_environment_variables
-        @required_environment_variables ||= []
-      end
-
-      def environment(*args)
-        args.each do |sym|
-          str = sym.to_s.upcase
-          send :define_method, sym do
-            ENV[str] || ENV[str.downcase]
-          end
-          required_environment_variables << str
+    def self.environment(*args)
+      args.each do |sym|
+        str = sym.to_s.upcase
+        send :define_method, sym do
+          ENV[str] || ENV[str.downcase]
         end
+        required_environment_variables << str
       end
+    end
 
-      def interpreter_pattern
-        @interpreter_pattern ||= concatenate_phrases_into_regex
+    def self.interpreter_pattern
+      @interpreter_pattern ||= concatenate_phrases_into_regex
+    end
+    # class MyService < Jarvis::Service
+    #   invoke_with :post_tweet
+    #
+    # end
+    def self.invoke_with(method_name)
+      send :define_method, :invoke do
+        run_hook :before_invoke
+        response = send method_name
+        run_hook :after_invoke
+        response
       end
-      # class MyService < Jarvis::Service
-      #   invoke_with :post_tweet
-      #
-      # end
-      def invoke_with(method_name)
-        send :define_method, :invoke do
-          run_hook :before_invoke
-          response = send method_name
-          run_hook :after_invoke
-          response
-        end
+    end
+
+
+    private
+
+    def self.concatenate_phrases_into_regex
+      case self.phrases
+      when Array then /#{self.phrases.join("|")}/i
+      when String then /#{self.phrases}/i
       end
+    end
 
-
-      private
-
-      def concatenate_phrases_into_regex
-        case self.phrases
-        when Array then /#{self.phrases.join("|")}/i
-        when String then /#{self.phrases}/i
-        end
-      end
-
-      def reset_interpreter_pattern
-        @interpreter_pattern = nil
-      end
+    def self.reset_interpreter_pattern
+      @interpreter_pattern = nil
     end
 
     invoke_with :run
