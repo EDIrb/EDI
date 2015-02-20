@@ -19,7 +19,7 @@ module Jarvis
       rescue Jarvis::UnfitEnvironmentException => e
         json text: "I'm really sorry, but that sevice needs to be configured"
       rescue => e
-        json text: "I'm sorry, Something went wrong"
+        json text: "I'm sorry, Something went wrong: #{e}"
       end
     end
 

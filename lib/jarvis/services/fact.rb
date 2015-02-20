@@ -2,6 +2,6 @@ class Fact < Jarvis::Service
   phrases "fact"
 
   def run
-    Jarvis.get("http://numbersapi.com/random").parsed_response
+    Jarvis.get("http://numbersapi.com/random").response
   end
 end

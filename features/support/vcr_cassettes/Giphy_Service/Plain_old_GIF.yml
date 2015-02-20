@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Accept
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Age:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 20 Feb 2015 20:42:42 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4
+      X-Varnish:
+      - '488624767'
+      Content-Length:
+      - '389'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2-
+
+        {"data":{"type":"gif","id":"10eqhIldgc59za","url":"http:\/\/giphy.com\/gifs\/horror-clown-fatboy-10eqhIldgc59za","image_original_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10eqhIldgc59za\/giphy.gif","image_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10eqhIldgc59za\/giphy.gif","image_mp4_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10eqhIldgc59za\/giphy.mp4","image_frames":"11","image_width":"482","image_height":"267","fixed_height_downsampled_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10eqhIldgc59za\/200_d.gif","fixed_height_downsampled_width":"361","fixed_height_downsampled_height":"200","fixed_width_downsampled_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10eqhIldgc59za\/200w_d.gif","fixed_width_downsampled_width":"200","fixed_width_downsampled_height":"111","fixed_height_small_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10eqhIldgc59za\/100.gif","fixed_height_small_still_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10eqhIldgc59za\/100_s.gif","fixed_height_small_width":"181","fixed_height_small_height":"100","fixed_width_small_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10eqhIldgc59za\/100w.gif","fixed_width_small_still_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10eqhIldgc59za\/100w_s.gif","fixed_width_small_width":"100","fixed_width_small_height":"55","rating":"pg","username":"","caption":"","tags":["horror","clown","fatboy"]},"meta":{"status":200,"msg":"OK"}}
+    http_version: 
+  recorded_at: Fri, 20 Feb 2015 20:42:10 GMT
+recorded_with: VCR 2.9.3

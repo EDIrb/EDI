@@ -7,6 +7,7 @@ require 'jarvis/exceptions'
 require 'jarvis/interpreter'
 require 'jarvis/services'
 require 'jarvis/slack'
+require 'jarvis/api/response'
 require 'httparty'
 require 'uri'
 require 'active_support/configurable'
@@ -35,7 +36,7 @@ module Jarvis
     end
 
     def get(*args, &blk)
-      HTTParty.get(*args, &blk)
+      Jarvis::API::Response.new HTTParty.get(*args, &blk)
     end
 
   end
