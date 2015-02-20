@@ -13,7 +13,8 @@ module Jarvis
       message.public_send(name, args, blk)
     end
 
-    def invoke
+    def run
+
     end
 
     def validate_environment
@@ -54,6 +55,7 @@ module Jarvis
       # end
       def invoke_with(method_name)
         send :define_method, :invoke do
+          run_hook :before_invoke
           send method_name
         end
       end
@@ -73,7 +75,7 @@ module Jarvis
       end
     end
 
-    
     invoke_with :run
+    define_hooks :before_invoke, :after_invoke
   end
 end

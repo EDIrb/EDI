@@ -9,29 +9,6 @@ require_relative './support/shared_contexts/server'
 
 include Rack::Test::Methods
 
-
-class TestServer < Jarvis::Server
-  def self.reset!
-    Jarvis.clear_services
-  end
-end
-
-class TestService < Jarvis::Service
-  def self.reset!
-    self.required_environment_variables = nil
-    self.interpreter_pattern = nil
-    self.phrases = nil
-  end
-end
-
-class OtherTestService < Jarvis::Service
-  def self.reset!
-    self.required_environment_variables = nil
-    self.interpreter_pattern = nil
-    self.phrases = nil
-  end
-end
-
 def app
   Jarvis::Server
 end
@@ -57,8 +34,28 @@ end
 
 RSpec.configure do |config|
   config.expose_dsl_globally = false
-  config.after(:each) { TestServer.reset! }
-  config.after(:each) { TestService.reset! }
+  config.around(:each) do |example|
+    class TestService < Jarvis::Service
+      def run
+
+      end
+    end
+    class OtherTestService < Jarvis::Service
+      def run
+
+      end
+    end
+    class TestServer < Jarvis::Server
+    end
+
+    example.run
+
+    Jarvis.clear_services
+
+    Object.send :remove_const, :TestServer
+    Object.send :remove_const, :TestService
+    Object.send :remove_const, :OtherTestService
+  end
   config.include ServerContext
   config.include ServiceContext
 end
