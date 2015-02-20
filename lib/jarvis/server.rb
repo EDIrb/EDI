@@ -26,7 +26,6 @@ private
     def run_service(service)
       service.validate_environment
       service.invoke
-      service.say
     end
 
     run! if app_file == $0

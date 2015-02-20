@@ -1,5 +1,5 @@
 class Fact < Jarvis::Service
-  phrases = "fact"
+  self.phrases = "fact"
 
   def run
     Jarvis.get("http://numbersapi.com/random").parsed_response
