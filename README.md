@@ -30,10 +30,10 @@ $ jarvis new my-bot
 
 ### Registering Services
 
-`/app/server.rb` is the main brain of your Jarvis bot. Here you can register which services you want to be available on your chatbot.
+`/bot/server.rb` is the main brain of your Jarvis bot. Here you can register which services you want to be available on your chatbot.
 
 ```ruby
-class MyBot < Jarvis::Server
+class Server < Jarvis::Server
   register_services :twitter, :img_flip, :urban_dictionary, :weather
 end
 ```
@@ -116,6 +116,13 @@ class Joke < Jarvis::Service
   end
 end
 ```
+## TODO
+
+* Finish Porting The Services from the original bot to the framework
+* Add Test Framework to the Project Generator
+* Service Generator
+* Configure all the things
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/jarvis_server/fork )

@@ -9,9 +9,15 @@ require 'jarvis/services'
 require 'jarvis/slack'
 require 'httparty'
 require 'uri'
+require 'active_support/configurable'
 
 module Jarvis
   include HTTParty
+  include ActiveSupport::Configurable
+
+  self.configure do |config|
+  end
+
   class << self
 
     attr_accessor :services

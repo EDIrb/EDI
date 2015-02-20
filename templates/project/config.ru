@@ -1,4 +1,4 @@
 $: << File.expand_path('../', __FILE__)
 require 'jarvis'
-require './app/server.rb'
+require './bot/server.rb'
 run Server
