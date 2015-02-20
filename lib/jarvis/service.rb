@@ -10,7 +10,7 @@ module Jarvis
     end
 
     def method_missing(name, *args, &blk)
-      message.public_send(name, args, blk)
+      message.public_send(name, *args, &blk)
     end
 
     def run
