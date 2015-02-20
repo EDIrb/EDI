@@ -1,6 +1,6 @@
 class Eightball < Jarvis::Service
 
-  interpreter_pattern = /\?$/
+  interpreter_pattern /\?$/
 
   def run
     responses.sample

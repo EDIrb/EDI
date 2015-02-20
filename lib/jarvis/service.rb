@@ -25,11 +25,11 @@ module Jarvis
 
     # Class Methods
     class << self
-      attr_accessor :required_environment_variables, :interpreter_pattern, :phrases, :invoker
+      attr_accessor :required_environment_variables, :pattern, :interpreter_phrases, :invoker
     end
-    
-    def self.phrases=(*args)
-      @phrases = args
+
+    def self.phrases(*args)
+      @interpreter_phrases = args
       reset_interpreter_pattern
     end
 
@@ -47,9 +47,15 @@ module Jarvis
       end
     end
 
-    def self.interpreter_pattern
-      @interpreter_pattern ||= concatenate_phrases_into_regex
+
+    def self.interpreter_pattern(pattern)
+      @pattern = pattern
     end
+
+    def self.pattern
+      @pattern ||= concatenate_phrases_into_regex
+    end
+
     # class MyService < Jarvis::Service
     #   invoke_with :post_tweet
     #
@@ -67,14 +73,14 @@ module Jarvis
     private
 
     def self.concatenate_phrases_into_regex
-      case self.phrases
-      when Array then /#{self.phrases.join("|")}/i
-      when String then /#{self.phrases}/i
+      case self.interpreter_phrases
+      when Array then /#{self.interpreter_phrases.join("|")}/i
+      when String then /#{self.interpreter_phrases}/i
       end
     end
 
     def self.reset_interpreter_pattern
-      @interpreter_pattern = nil
+      @pattern = nil
     end
 
     invoke_with :run

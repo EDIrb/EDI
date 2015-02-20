@@ -58,11 +58,11 @@ There are two ways to tell Jarvis to send a given message to a particular servic
 
 ```ruby
 class ImgFlip < Jarvis::Service
-  phrases = "success kid", "overly attached girlfriend"
+  phrases "success kid", "overly attached girlfriend"
   # will converted to a pattern that looks like /success kid|overly attached girlfriend/i
 end
 class SortingHat < Jarvis::Service
-  interpreter_pattern = /sorting hat|where do I belong/i
+  interpreter_pattern /sorting hat|where do I belong/i
 end
 ```
 

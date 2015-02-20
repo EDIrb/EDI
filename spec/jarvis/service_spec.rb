@@ -29,19 +29,19 @@ RSpec.describe Jarvis::Service do
   end
 
   describe "Expose Pattern For the Service to be Interpreted" do
-    before { service.interpreter_pattern = /are you up/i }
-    it { expect(service.interpreter_pattern).to eq /are you up/i }
+    before { service.interpreter_pattern /are you up/i }
+    it { expect(service.pattern).to eq /are you up/i }
   end
 
   describe "Allow the Developer to make a list of phrases to be concatenated into the interpreter pattern" do
     context "Accepts a single phrase" do
-      before { service.phrases = "success kid" }
-      it { expect(service.interpreter_pattern ).to eq /success kid/i }
+      before { service.phrases "success kid" }
+      it { expect(service.pattern ).to eq /success kid/i }
     end
 
     context "Multiple Phrases" do
-      before { service.phrases = "success kid", "hello world" }
-      it { expect(service.interpreter_pattern).to eq /success kid|hello world/i }
+      before { service.phrases "success kid", "hello world" }
+      it { expect(service.pattern).to eq /success kid|hello world/i }
 
     end
   end

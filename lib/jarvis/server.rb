@@ -1,15 +1,17 @@
 require 'sinatra'
 require "sinatra/json"
+require "sinatra/multi_route"
 require 'json'
 
 module Jarvis
   class Server < Sinatra::Base
+    register Sinatra::MultiRoute
 
     get "/" do
       json text: "Hello, I'm Jarvis"
     end
 
-    post "/jarvis" do
+    route :get, :post, "/jarvis" do
       message = Slack::Message.new(params)
       service = Jarvis::Interpreter.new(message).determine_service.new(message)
       begin

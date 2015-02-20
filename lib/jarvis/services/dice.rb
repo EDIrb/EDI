@@ -1,6 +1,6 @@
 class Dice < Jarvis::Service
   attr_accessor :dice_result
-  phrases = "roll", "dice"
+  phrases "roll", "dice"
   before_invoke :perform_roll
 
   def run

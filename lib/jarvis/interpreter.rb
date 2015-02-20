@@ -17,7 +17,7 @@ private
       Jarvis.services.each do |service|
         constant = service.constantize
         determine_service += <<-code
-          when #{constant.interpreter_pattern.inspect} then #{constant}
+          when #{constant.pattern.inspect} then #{constant}
         code
       end
       determine_service += <<-code
