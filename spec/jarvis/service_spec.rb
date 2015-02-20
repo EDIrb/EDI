@@ -69,11 +69,23 @@ RSpec.describe Jarvis::Service do
       end
       it { expect(other_service.new(message).invoke).to eq "This is crazy" }
     end
+
   end
 
   describe "before_invoke" do
     before { class TestService < Jarvis::Service
       before_invoke :puts_hello
+      def puts_hello
+        puts "Hello"
+      end
+    end }
+
+    it { expect { service.new(message).invoke }.to output("Hello\n").to_stdout }
+  end
+
+  describe "after_invoke" do
+    before { class TestService < Jarvis::Service
+      after_invoke :puts_hello
       def puts_hello
         puts "Hello"
       end
