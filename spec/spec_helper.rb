@@ -7,8 +7,10 @@ require 'byebug'
 require 'vcr'
 require_relative './support/shared_contexts/service'
 require_relative './support/shared_contexts/server'
+require 'jarvis/test_support/test_support'
 
 include Rack::Test::Methods
+include Jarvis::TestSupport
 
 def app
   Jarvis::Server
@@ -18,19 +20,6 @@ def stub_env(hash)
   hash.each do |key, value|
     allow(ENV).to receive(:[]).with(key) { value }
   end
-end
-
-def slack_outgoing_message(options={text:"Jarvis, what's going on?"})
-  {
-    "team_id" => options[:team_id] || "T0001",
-    "channel_id" => options[:channel_id] || "BLAH",
-    "channel_name" => options[:channel_name] || "test",
-    "timestamp" => options[:timestamp] || "1355517523.000005",
-    "user_id" => options[:user_id] || "U2147483697",
-    "user_name" => options[:user_name] || "Steve",
-    "text" => options[:text],
-    "trigger_word" => options[:trigger_word] || "Jarvis"
-  }
 end
 
 RSpec.configure do |config|
