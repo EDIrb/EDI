@@ -132,4 +132,91 @@ http_interactions:
         are sometimes more real than people with bodies and\r\nheartbeats.","link":"http://iheartquotes.com/fortune/show/30552","source":"codehappy"}'
     http_version: 
   recorded_at: Sat, 21 Feb 2015 02:39:02 GMT
+- request:
+    method: get
+    uri: http://iheartquotes.com/api/v1/random?format=json&source=simpsons_homer
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - close
+      Etag:
+      - '"499fdfbaa6284d08f3b1f84d5dc92547"'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Date:
+      - Sat, 21 Feb 2015 03:00:33 GMT
+      X-Runtime:
+      - '0.008960'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Server:
+      - thin 1.2.6 codename Crazy Delicious
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"json_class":"Fortune","tags":["simpsons_homer"],"quote":"Homer:\tI
+        don''t want you to see me sitting on my worthless butt.\n\nBart:\tWe''ve seen
+        it, Dad.\n\n\t\t   Homer at the Bat","link":"http://iheartquotes.com/fortune/show/5519","source":"simpsons_homer"}'
+    http_version: 
+  recorded_at: Sat, 21 Feb 2015 03:00:33 GMT
+- request:
+    method: get
+    uri: http://iheartquotes.com/api/v1/random?format=json&source=starwars
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - close
+      Etag:
+      - '"59651e5c2e7322c2f642af48dc409df9"'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Date:
+      - Sat, 21 Feb 2015 03:02:10 GMT
+      X-Runtime:
+      - '0.013754'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Server:
+      - thin 1.2.6 codename Crazy Delicious
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"json_class":"Fortune","tags":["starwars"],"quote":"Han Solo:\n\tAfraid
+        I was gonna leave without giving you a\n\tgoodbye kiss?\nPrincess Leia:\n\tI''d
+        just as soon kiss a Wookiee!\nHan Solo:\n\tI can arrange that! You could use
+        a good kiss!","link":"http://iheartquotes.com/fortune/show/1293","source":"starwars"}'
+    http_version: 
+  recorded_at: Sat, 21 Feb 2015 03:02:10 GMT
 recorded_with: VCR 2.9.3

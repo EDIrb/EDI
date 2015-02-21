@@ -18,9 +18,9 @@ private
 
   def source
     case text
-    when /(Simpsons|simpsons|Homer|homer)/
+    when /simpsons|homer/i
       "&source=simpsons_homer"
-    when /(Star Wars|star wars|Star wars|luke|leia|vader|Vader|Luke|Leia)/
+    when /star wars|luke|leia|vader/i
       "&source=starwars"
     else
       ""
