@@ -13,4 +13,10 @@ RSpec.describe Jarvis do
     end
   end
 
+  describe "Utilities" do
+
+    it { expect(Jarvis.encode_uri("hello world")).to eq "hello%20world" }
+    it { expect(Jarvis.decode_uri("hello%20world")).to eq "hello world" }
+  end
+
 end

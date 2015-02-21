@@ -39,5 +39,12 @@ module Jarvis
       Jarvis::API::Response.new HTTParty.get(*args, &blk)
     end
 
+    def encode_uri(str)
+      URI.encode(str)
+    end
+
+    def decode_uri(str)
+      URI.decode(str)
+    end
   end
 end
