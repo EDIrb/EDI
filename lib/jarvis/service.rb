@@ -63,9 +63,9 @@ module Jarvis
     def self.invoke_with(method_name)
       send :define_method, :invoke do
         run_hook :before_invoke
-        response = send method_name
+        self.response = send method_name
         run_hook :after_invoke
-        response
+        self.response
       end
     end
 

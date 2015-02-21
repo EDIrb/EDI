@@ -1,0 +1,135 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.giphy.com//gifs/random?api_key=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 21 Feb 2015 02:10:01 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4
+      X-Varnish:
+      - '1468789280'
+      Content-Length:
+      - '63'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2-
+
+        {"meta":{"status":404,"msg":"Not Found!"}}
+    http_version: 
+  recorded_at: Sat, 21 Feb 2015 02:10:05 GMT
+- request:
+    method: get
+    uri: http://iheartquotes.com/api/v1/random?format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - close
+      Etag:
+      - '"19231bcf5bbdafee30ecabf324dad23e"'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Date:
+      - Sat, 21 Feb 2015 02:12:55 GMT
+      X-Runtime:
+      - '0.074872'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Server:
+      - thin 1.2.6 codename Crazy Delicious
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"json_class":"Fortune","tags":["platitudes","publilius_syrus"],"quote":"Prosperity
+        makes friends, adversity tries them.\n\t\t-- Publilius Syrus","link":"http://iheartquotes.com/fortune/show/51230","source":"fortune"}'
+    http_version: 
+  recorded_at: Sat, 21 Feb 2015 02:12:55 GMT
+- request:
+    method: get
+    uri: http://iheartquotes.com/api/v1/random?format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - close
+      Etag:
+      - '"65fb4535baef9c1655272f94a923fb71"'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Date:
+      - Sat, 21 Feb 2015 02:39:02 GMT
+      X-Runtime:
+      - '0.074269'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Server:
+      - thin 1.2.6 codename Crazy Delicious
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"json_class":"Fortune","tags":["codehappy"],"quote":"If you will practice
+        being fictional for a while, you will understand that\r\nfictional characters
+        are sometimes more real than people with bodies and\r\nheartbeats.","link":"http://iheartquotes.com/fortune/show/30552","source":"codehappy"}'
+    http_version: 
+  recorded_at: Sat, 21 Feb 2015 02:39:02 GMT
+recorded_with: VCR 2.9.3
