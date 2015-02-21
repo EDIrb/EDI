@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://iheartquotes.com/api/v1/random?format=json&source=starwars
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - close
+      Etag:
+      - '"e385abda7959a63f3705f95ab9caf46d"'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Date:
+      - Sat, 21 Feb 2015 03:12:35 GMT
+      X-Runtime:
+      - '0.010135'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Server:
+      - thin 1.2.6 codename Crazy Delicious
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"json_class":"Fortune","tags":["starwars"],"quote":"Emperor Palpatine Strike me down with all of your hatred and your journey towards the dark side will be complete!","link":"http://iheartquotes.com/fortune/show/1308","source":"starwars"}'
+    http_version:
+  recorded_at: Sat, 21 Feb 2015 03:12:35 GMT
+recorded_with: VCR 2.9.3
