@@ -15,6 +15,6 @@ RSpec.describe Jarvis::Server do
     before { service.phrases "success kid" }
     before { Jarvis.register_services :test_service }
     before { post "/jarvis", slack_message }
-    it { expect(message).to eq "I'm really sorry, but that sevice needs to be configured" }
+    it { expect(message).to eq "I'm really sorry, but that service needs to be configured" }
   end
 end

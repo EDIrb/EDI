@@ -1,0 +1,189 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://slack.com/api/channels.history?channel=C0000001&count=2&token=slack_token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 22 Feb 2015 02:54:54 GMT
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Accepted-Oauth-Scopes:
+      - read
+      X-Content-Type-Options:
+      - nosniff
+      X-Oauth-Scopes:
+      - identify,read,post,client,admin
+      X-Xss-Protection:
+      - '0'
+      Content-Length:
+      - '164'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"ok":true,"messages":[{"type":"message","user":"U02TK3RKG","text":"Took
+        over 5000 steps to shovel","ts":"1424559066.000043"},{"type":"message","user":"U02TERHJX","text":"Heh","ts":"1424543398.000042"}],"has_more":true}'
+    http_version:
+  recorded_at: Sun, 22 Feb 2015 02:54:54 GMT
+- request:
+    method: get
+    uri: https://slack.com/api/channels.history?channel=C0000001&count=2&token=slack_token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 22 Feb 2015 02:56:08 GMT
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Accepted-Oauth-Scopes:
+      - read
+      X-Content-Type-Options:
+      - nosniff
+      X-Oauth-Scopes:
+      - identify,read,post,client,admin
+      X-Xss-Protection:
+      - '0'
+      Content-Length:
+      - '310'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"ok":true,"messages":[{"username":"","text":"Here you go, dvg\n\n<http:\/\/i.imgflip.com\/gmvgk.jpg>","bot_id":"B02TFUM6S","attachments":[{"from_url":"http:\/\/i.imgflip.com\/gmvgk.jpg","fallback":"500x500px
+        image","image_url":"http:\/\/i.imgflip.com\/gmvgk.jpg","image_width":500,"image_height":500,"image_bytes":17919,"id":1}],"type":"message","subtype":"bot_message","ts":"1421810229.000007"},{"type":"message","user":"U02TEDJGF","text":"Jarvis
+        success kid thing, thing","ts":"1421810228.000006"}],"has_more":true}'
+    http_version:
+  recorded_at: Sun, 22 Feb 2015 02:56:08 GMT
+- request:
+    method: post
+    uri: https://api.twitter.com/1.1/statuses/update.json
+    body:
+      encoding: UTF-8
+      string: status=Jarvis+success+kid+thing%2C+thing
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.14.0
+      Authorization:
+      - OAuth oauth_consumer_key="twitter_consumer_key", oauth_nonce="blah",
+        oauth_signature="nkSyDGscZcmm3E6j1tJon0PigdU%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1424573768", oauth_token="twitter_access_token",
+        oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '812'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 22 Feb 2015 02:56:09 UTC
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Sun, 22 Feb 2015 02:56:09 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_a
+      Set-Cookie:
+      - guest_id=v1%3A142457376905829401; Domain=.twitter.com; Path=/; Expires=Tue,
+        21-Feb-2017 02:56:09 UTC
+      - lang=en
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write
+      X-Connection-Hash:
+      - d66980f0c1e6d9f2d64a5803c862d92c
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Response-Time:
+      - '126'
+      X-Transaction:
+      - 51f9a0fef4ef5cab
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"created_at":"Sun Feb 22 02:56:09 +0000 2015","id":569329768350380032,"id_str":"569329768350380032","text":"Jarvis
+        success kid thing, thing","source":"\u003ca href=\"http:\/\/placeholderjarviscat.net\"
+        rel=\"nofollow\"\u003eCatPenTwitter\u003c\/a\u003e","truncated":false,"in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"user":{"id":2859748697,"id_str":"2859748697","name":"The
+        Cat Pen","screen_name":"twitter_handle","location":"","profile_location":null,"description":"","url":null,"entities":{"description":{"urls":[]}},"protected":false,"followers_count":6,"friends_count":9,"listed_count":0,"created_at":"Tue
+        Nov 04 01:23:34 +0000 2014","favourites_count":1,"utc_offset":-18000,"time_zone":"Eastern
+        Time (US & Canada)","geo_enabled":false,"verified":false,"statuses_count":28,"lang":"en","contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/529445226608218112\/yodLdvk3_normal.jpeg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/529445226608218112\/yodLdvk3_normal.jpeg","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"default_profile":true,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"retweet_count":0,"favorite_count":0,"entities":{"hashtags":[],"symbols":[],"user_mentions":[],"urls":[]},"favorited":false,"retweeted":false,"lang":"en"}'
+    http_version:
+  recorded_at: Sun, 22 Feb 2015 02:56:09 GMT
+recorded_with: VCR 2.9.3
