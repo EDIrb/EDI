@@ -34,7 +34,7 @@ $ jarvis new my-bot
 
 ```ruby
 class Server < Jarvis::Server
-  register_services :twitter, :img_flip, :urban_dictionary, :weather
+  register_services :tweet_that, :img_flip, :urban_dictionary, :weather
 end
 ```
 
