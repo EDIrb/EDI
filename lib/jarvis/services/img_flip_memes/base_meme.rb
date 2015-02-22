@@ -1,8 +1,8 @@
 module ImgFlipMemes
   class BaseMeme
-    attr_accessor :text, :imgflip_user, :imgflip_password, :text0, :text1, :captures
-    def initialize(text, imgflip_user, imgflip_password)
-      @text = text
+    attr_accessor :message, :imgflip_user, :imgflip_password, :text0, :text1, :captures
+    def initialize(message, imgflip_user, imgflip_password)
+      @message = message
       @imgflip_user = imgflip_user
       @imgflip_password = imgflip_password
       @captures = {}
@@ -47,6 +47,10 @@ module ImgFlipMemes
     def trim_captures
       self.captures[:text0] = self.captures[:text0].strip if self.captures[:text0]
       self.captures[:text1] = self.captures[:text1].strip if self.captures[:text1]
+    end
+
+    def method_missing(name, *args, &block)
+      message.public_send(name, *args, &block)
     end
 
   end

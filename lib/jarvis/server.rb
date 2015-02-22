@@ -18,6 +18,8 @@ module Jarvis
         json text: run_service(service)
       rescue Jarvis::UnfitEnvironmentException => e
         json text: "I'm really sorry, but that service needs to be configured"
+      rescue Jarvis::ThirdPartyAPIFailure
+        json text: "Most unfortunately, #{params["user_name"]}, that service is not working right now."
       rescue => e
         json text: "I'm sorry, Something went wrong: #{e}"
       end

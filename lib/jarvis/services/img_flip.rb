@@ -1,4 +1,4 @@
-
+require 'jarvis/services/img_flip_memes/base_meme'
 # Require All Supported Memes
 Dir[File.dirname(__FILE__) + '/img_flip_memes/*.rb'].each {|file| require file }
 
@@ -33,11 +33,13 @@ private
     case text
     when /success kid/i
       ImgFlipMemes::SuccessKid
+    when /afraid to ask/i
+      ImgFlipMemes::AfraidToAsk
     end
   end
 
   def create_meme
-    self.meme_link = meme_class.new(text, imgflip_user, imgflip_password).create_meme
+    self.meme_link = meme_class.new(message, imgflip_user, imgflip_password).create_meme
   end
 
 end

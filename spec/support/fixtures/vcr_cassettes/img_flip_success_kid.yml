@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Date:
-      - Sun, 22 Feb 2015 19:21:33 GMT
+      - Sun, 22 Feb 2015 19:48:12 GMT
       Content-Type:
       - text/html; charset=utf-8
       Transfer-Encoding:
@@ -29,10 +29,10 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - PHPSESSID=c49ff9b7303ee8c29f3fa5dbca67569a; path=/
-      - __cfduid=d344b6bb85415c82a81d3d3b51cd3a4331424632893; expires=Mon, 22-Feb-16
-        19:21:33 GMT; path=/; domain=.imgflip.com; HttpOnly
-      - claim_key=kuBbPsVQwCBH3WnqOcqZ71_kWRpcdpJT; expires=Sun, 22-Feb-2015 21:21:32
+      - PHPSESSID=20f67b465a2cddda7d71f56cb3ac0f47; path=/
+      - __cfduid=dabd0c7f840cdb415cbd242f3ff64b8851424634492; expires=Mon, 22-Feb-16
+        19:48:12 GMT; path=/; domain=.imgflip.com; HttpOnly
+      - claim_key=AhWp1eH65ej9-AvuA9OvVUQGP3zkHRPk; expires=Sun, 22-Feb-2015 21:48:12
         GMT; Max-Age=7200; path=/
       Cache-Control:
       - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
@@ -45,10 +45,10 @@ http_interactions:
       Vary:
       - User-Agent,Accept-Encoding
       Cf-Ray:
-      - 1bcd8c1d99f10169-ORD
+      - 1bcdb32889460424-ORD
     body:
       encoding: UTF-8
-      string: '{"success":true,"data":{"url":"http:\/\/i.imgflip.com\/hz8qk.jpg","page_url":"https:\/\/imgflip.com\/i\/hz8qk"}}'
+      string: '{"success":true,"data":{"url":"http:\/\/i.imgflip.com\/hz9zo.jpg","page_url":"https:\/\/imgflip.com\/i\/hz9zo"}}'
     http_version:
-  recorded_at: Sun, 22 Feb 2015 19:21:33 GMT
+  recorded_at: Sun, 22 Feb 2015 19:48:12 GMT
 recorded_with: VCR 2.9.3
