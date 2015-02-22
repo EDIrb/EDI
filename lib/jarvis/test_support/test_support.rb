@@ -1,7 +1,7 @@
 module Jarvis
   module TestSupport
     require 'rspec/mocks'
-    
+
     def slack_outgoing_message(options={text:"Jarvis, what's going on?"})
       {
         "team_id" => options[:team_id] || "T0001",
@@ -20,9 +20,7 @@ module Jarvis
     end
 
     def stub_env(hash)
-      hash.each do |key, value|
-        allow(ENV).to receive(:[]).with(key) { value }
-      end
+      stub_const('ENV', ENV.to_hash.merge(hash))
     end
 
   end

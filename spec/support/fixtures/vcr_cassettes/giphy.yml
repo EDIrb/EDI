@@ -53,7 +53,7 @@ http_interactions:
       string: |2-
 
         {"data":{"type":"gif","id":"10BhvFXneBD6X6","url":"http:\/\/giphy.com\/gifs\/xavi-hernndez-10BhvFXneBD6X6","image_original_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10BhvFXneBD6X6\/giphy.gif","image_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10BhvFXneBD6X6\/giphy.gif","image_mp4_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10BhvFXneBD6X6\/giphy.mp4","image_frames":"37","image_width":"160","image_height":"260","fixed_height_downsampled_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10BhvFXneBD6X6\/200_d.gif","fixed_height_downsampled_width":"123","fixed_height_downsampled_height":"200","fixed_width_downsampled_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10BhvFXneBD6X6\/200w_d.gif","fixed_width_downsampled_width":"200","fixed_width_downsampled_height":"325","fixed_height_small_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10BhvFXneBD6X6\/100.gif","fixed_height_small_still_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10BhvFXneBD6X6\/100_s.gif","fixed_height_small_width":"62","fixed_height_small_height":"100","fixed_width_small_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10BhvFXneBD6X6\/100w.gif","fixed_width_small_still_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/10BhvFXneBD6X6\/100w_s.gif","fixed_width_small_width":"100","fixed_width_small_height":"163","rating":"g","username":"","caption":"","tags":["xavi","xavi hernndez"]},"meta":{"status":200,"msg":"OK"}}
-    http_version:
+    http_version: 
   recorded_at: Fri, 20 Feb 2015 20:30:48 GMT
 - request:
     method: get
@@ -108,7 +108,7 @@ http_interactions:
       string: |2-
 
         {"data":{"type":"gif","id":"4u8WdgQEMVaj6","url":"http:\/\/giphy.com\/gifs\/cat-kitten-please-4u8WdgQEMVaj6","image_original_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/4u8WdgQEMVaj6\/giphy.gif","image_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/4u8WdgQEMVaj6\/giphy.gif","image_mp4_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/4u8WdgQEMVaj6\/giphy.mp4","image_frames":"95","image_width":"240","image_height":"181","fixed_height_downsampled_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/4u8WdgQEMVaj6\/200_d.gif","fixed_height_downsampled_width":"265","fixed_height_downsampled_height":"200","fixed_width_downsampled_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/4u8WdgQEMVaj6\/200w_d.gif","fixed_width_downsampled_width":"200","fixed_width_downsampled_height":"151","fixed_height_small_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/4u8WdgQEMVaj6\/100.gif","fixed_height_small_still_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/4u8WdgQEMVaj6\/100_s.gif","fixed_height_small_width":"133","fixed_height_small_height":"100","fixed_width_small_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/4u8WdgQEMVaj6\/100w.gif","fixed_width_small_still_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/4u8WdgQEMVaj6\/100w_s.gif","fixed_width_small_width":"100","fixed_width_small_height":"75","rating":"g","username":"","caption":"","tags":["cat","kitten","please","beg"]},"meta":{"status":200,"msg":"OK"}}
-    http_version:
+    http_version: 
   recorded_at: Fri, 20 Feb 2015 20:35:08 GMT
 - request:
     method: get
@@ -163,7 +163,7 @@ http_interactions:
       string: |2-
 
         {"data":{"type":"gif","id":"FsjDdnIRcroIM","url":"http:\/\/giphy.com\/gifs\/cheezburger-sloth-yawn-FsjDdnIRcroIM","image_original_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/FsjDdnIRcroIM\/giphy.gif","image_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/FsjDdnIRcroIM\/giphy.gif","image_mp4_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/FsjDdnIRcroIM\/giphy.mp4","image_frames":"90","image_width":"300","image_height":"169","fixed_height_downsampled_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/FsjDdnIRcroIM\/200_d.gif","fixed_height_downsampled_width":"355","fixed_height_downsampled_height":"200","fixed_width_downsampled_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/FsjDdnIRcroIM\/200w_d.gif","fixed_width_downsampled_width":"200","fixed_width_downsampled_height":"113","fixed_height_small_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/FsjDdnIRcroIM\/100.gif","fixed_height_small_still_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/FsjDdnIRcroIM\/100_s.gif","fixed_height_small_width":"178","fixed_height_small_height":"100","fixed_width_small_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/FsjDdnIRcroIM\/100w.gif","fixed_width_small_still_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/FsjDdnIRcroIM\/100w_s.gif","fixed_width_small_width":"100","fixed_width_small_height":"56","rating":"pg","username":"cheezburger","caption":"","tags":["animals","cute","tired","sloth","yawn"]},"meta":{"status":200,"msg":"OK"}}
-    http_version:
+    http_version: 
   recorded_at: Fri, 20 Feb 2015 20:36:35 GMT
 - request:
     method: get
@@ -218,7 +218,7 @@ http_interactions:
       string: |2-
 
         {"data":{"type":"gif","id":"La4sAOzY9H8L6","url":"http:\/\/giphy.com\/gifs\/bacon-La4sAOzY9H8L6","image_original_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/La4sAOzY9H8L6\/giphy.gif","image_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/La4sAOzY9H8L6\/giphy.gif","image_mp4_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/La4sAOzY9H8L6\/giphy.mp4","image_frames":"59","image_width":"500","image_height":"281","fixed_height_downsampled_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/La4sAOzY9H8L6\/200_d.gif","fixed_height_downsampled_width":"356","fixed_height_downsampled_height":"200","fixed_width_downsampled_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/La4sAOzY9H8L6\/200w_d.gif","fixed_width_downsampled_width":"200","fixed_width_downsampled_height":"112","fixed_height_small_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/La4sAOzY9H8L6\/100.gif","fixed_height_small_still_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/La4sAOzY9H8L6\/100_s.gif","fixed_height_small_width":"178","fixed_height_small_height":"100","fixed_width_small_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/La4sAOzY9H8L6\/100w.gif","fixed_width_small_still_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/La4sAOzY9H8L6\/100w_s.gif","fixed_width_small_width":"100","fixed_width_small_height":"56","rating":"g","username":"","caption":"","tags":["bacon"]},"meta":{"status":200,"msg":"OK"}}
-    http_version:
+    http_version: 
   recorded_at: Fri, 20 Feb 2015 20:37:44 GMT
 - request:
     method: get
@@ -273,6 +273,241 @@ http_interactions:
       string: |2-
 
         {"data":{"type":"gif","id":"muAhZqHWt0bv2","url":"http:\/\/giphy.com\/gifs\/trippy-psychedelic-eye-muAhZqHWt0bv2","image_original_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/muAhZqHWt0bv2\/giphy.gif","image_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/muAhZqHWt0bv2\/giphy.gif","image_mp4_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/muAhZqHWt0bv2\/giphy.mp4","image_frames":"19","image_width":"500","image_height":"369","fixed_height_downsampled_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/muAhZqHWt0bv2\/200_d.gif","fixed_height_downsampled_width":"271","fixed_height_downsampled_height":"200","fixed_width_downsampled_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/muAhZqHWt0bv2\/200w_d.gif","fixed_width_downsampled_width":"200","fixed_width_downsampled_height":"148","fixed_height_small_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/muAhZqHWt0bv2\/100.gif","fixed_height_small_still_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/muAhZqHWt0bv2\/100_s.gif","fixed_height_small_width":"136","fixed_height_small_height":"100","fixed_width_small_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/muAhZqHWt0bv2\/100w.gif","fixed_width_small_still_url":"http:\/\/s3.amazonaws.com\/giphymedia\/media\/muAhZqHWt0bv2\/100w_s.gif","fixed_width_small_width":"100","fixed_width_small_height":"74","rating":"y","username":"","caption":"","tags":["trippy","psychedelic","eye","camera","flash"]},"meta":{"status":200,"msg":"OK"}}
-    http_version:
+    http_version: 
   recorded_at: Fri, 20 Feb 2015 20:38:45 GMT
+- request:
+    method: get
+    uri: http://api.giphy.com//gifs/random?api_key=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 22 Feb 2015 01:34:34 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4
+      X-Varnish:
+      - '490645020'
+      Content-Length:
+      - '63'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2-
+
+        {"meta":{"status":404,"msg":"Not Found!"}}
+    http_version: 
+  recorded_at: Sun, 22 Feb 2015 01:34:00 GMT
+- request:
+    method: get
+    uri: http://api.giphy.com//gifs/random?api_key=&tag=cat
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 22 Feb 2015 01:33:35 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4
+      X-Varnish:
+      - '1927175401'
+      Content-Length:
+      - '63'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2-
+
+        {"meta":{"status":404,"msg":"Not Found!"}}
+    http_version: 
+  recorded_at: Sun, 22 Feb 2015 01:34:00 GMT
+- request:
+    method: get
+    uri: http://api.giphy.com//gifs/random?api_key=&tag=sloth
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 22 Feb 2015 01:33:58 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4
+      X-Varnish:
+      - '300518237'
+      Content-Length:
+      - '63'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2-
+
+        {"meta":{"status":404,"msg":"Not Found!"}}
+    http_version: 
+  recorded_at: Sun, 22 Feb 2015 01:34:01 GMT
+- request:
+    method: get
+    uri: http://api.giphy.com//gifs/random?api_key=&tag=bacon
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 22 Feb 2015 01:33:46 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4
+      X-Varnish:
+      - '136002449'
+      Content-Length:
+      - '63'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2-
+
+        {"meta":{"status":404,"msg":"Not Found!"}}
+    http_version: 
+  recorded_at: Sun, 22 Feb 2015 01:34:01 GMT
+- request:
+    method: get
+    uri: http://api.giphy.com//gifs/random?api_key=&tag=trippy
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 22 Feb 2015 01:33:36 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4
+      X-Varnish:
+      - '1927175417'
+      Content-Length:
+      - '63'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |2-
+
+        {"meta":{"status":404,"msg":"Not Found!"}}
+    http_version: 
+  recorded_at: Sun, 22 Feb 2015 01:34:01 GMT
 recorded_with: VCR 2.9.3
