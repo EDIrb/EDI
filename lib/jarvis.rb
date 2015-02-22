@@ -36,8 +36,25 @@ module Jarvis
       @services = []
     end
 
-    def get(*args, &blk)
-      Jarvis::API::Response.new HTTParty.get(*args, &blk)
+    # HTTP Requests
+    def get(path, options={}, &block)
+      Jarvis::API::Response.new HTTParty.get(path, options, &block)
+    end
+
+    def post(path, options={}, &block)
+      Jarvis::API::Response.new HTTParty.post(path, options, &block)
+    end
+
+    def patch(path, options={}, &block)
+      Jarvis::API::Response.new HTTParty.patch(path, options, &block)
+    end
+
+    def put(path, options={}, &block)
+      Jarvis::API::Response.new HTTParty.put(path, options, &block)
+    end
+
+    def delete(path, options={}, &block)
+      Jarvis::API::Response.new HTTParty.delete(path, options, &block)
     end
 
     def encode_uri(str)

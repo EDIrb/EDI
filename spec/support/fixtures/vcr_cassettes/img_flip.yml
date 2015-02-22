@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.imgflip.com/caption_image
+    body:
+      encoding: UTF-8
+      string: template_id=61544&username=imgflip_user&password=imgflip_password&text0=hello&text1=world
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Sun, 22 Feb 2015 19:21:33 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=c49ff9b7303ee8c29f3fa5dbca67569a; path=/
+      - __cfduid=d344b6bb85415c82a81d3d3b51cd3a4331424632893; expires=Mon, 22-Feb-16
+        19:21:33 GMT; path=/; domain=.imgflip.com; HttpOnly
+      - claim_key=kuBbPsVQwCBH3WnqOcqZ71_kWRpcdpJT; expires=Sun, 22-Feb-2015 21:21:32
+        GMT; Max-Age=7200; path=/
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Cf-Railgun:
+      - direct (starting new WAN connection)
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - User-Agent,Accept-Encoding
+      Cf-Ray:
+      - 1bcd8c1d99f10169-ORD
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"data":{"url":"http:\/\/i.imgflip.com\/hz8qk.jpg","page_url":"https:\/\/imgflip.com\/i\/hz8qk"}}'
+    http_version:
+  recorded_at: Sun, 22 Feb 2015 19:21:33 GMT
+recorded_with: VCR 2.9.3
