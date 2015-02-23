@@ -121,9 +121,13 @@ end
 When these things are done, we'll be ready for 1.0
 
 ✓ Finish Porting The Services from the original bot to the framework
+
 ☐ Add Test Framework to the Project Generator
+
 ☐ Service Generator
+
 ☐ Configure All The Things
+
 ☐ Boot Process for the Generated App
 
 ## Contributing
