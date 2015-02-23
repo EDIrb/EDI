@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.imgflip.com/caption_image
+    body:
+      encoding: UTF-8
+      string: template_id=100947&username=imgflip_user&password=imgflip_password&text0=What%20if%20I%20told%20you&text1=Jarvis%20is%20the%20best%20bot%20ever%3F
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 23 Feb 2015 02:57:37 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=d183c244a68b1e5f0ae5097d62e3f1e7; path=/
+      - __cfduid=dbcfd169b613c41dd5e0302ebd4eabfa11424660256; expires=Tue, 23-Feb-16
+        02:57:36 GMT; path=/; domain=.imgflip.com; HttpOnly
+      - claim_key=w5LJYhtiFnPPWu0lgtu67LlYHaG7Ch5_; expires=Mon, 23-Feb-2015 04:57:36
+        GMT; Max-Age=7200; path=/
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Cf-Railgun:
+      - direct (starting new WAN connection)
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - User-Agent,Accept-Encoding
+      Cf-Ray:
+      - 1bd0282bca7710c3-ORD
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"data":{"url":"http:\/\/i.imgflip.com\/hzsv9.jpg","page_url":"https:\/\/imgflip.com\/i\/hzsv9"}}'
+    http_version:
+  recorded_at: Mon, 23 Feb 2015 02:57:37 GMT
+recorded_with: VCR 2.9.3

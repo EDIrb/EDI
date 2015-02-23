@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.imgflip.com/caption_image
+    body:
+      encoding: UTF-8
+      string: template_id=100952&username=imgflip_user&password=imgflip_password&text0=I%20looked%20at%20your%20slack%20channel&text1=who%20is%20this%20jarvis%20you%20keep%20talking%20to%3F
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 23 Feb 2015 02:43:10 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=04edc955186539e8ae4e4b74abcd787c; path=/
+      - __cfduid=d78cf495c8784925ba101d3e00e535e131424659389; expires=Tue, 23-Feb-16
+        02:43:09 GMT; path=/; domain=.imgflip.com; HttpOnly
+      - claim_key=tNqd8hV9h48Mi9ytMD8momMkJptF4Z9T; expires=Mon, 23-Feb-2015 04:43:09
+        GMT; Max-Age=7200; path=/
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Cf-Railgun:
+      - direct (starting new WAN connection)
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - User-Agent,Accept-Encoding
+      Cf-Ray:
+      - 1bd013014b8b09ac-ORD
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"data":{"url":"http:\/\/i.imgflip.com\/hzsbu.jpg","page_url":"https:\/\/imgflip.com\/i\/hzsbu"}}'
+    http_version:
+  recorded_at: Mon, 23 Feb 2015 02:43:10 GMT
+recorded_with: VCR 2.9.3

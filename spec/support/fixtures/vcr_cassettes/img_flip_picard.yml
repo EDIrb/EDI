@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.imgflip.com/caption_image
+    body:
+      encoding: UTF-8
+      string: template_id=245898&username=imgflip_user&password=imgflip_password&text0=why%20the%20fuck&text1=did%20you%20make%20so%20many%20memes%3F
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 23 Feb 2015 02:46:36 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=b49c8bc0ae08ad9d584b0d6e7e601d14; path=/
+      - __cfduid=de332a208b43b0ccbf913a72aa09261af1424659595; expires=Tue, 23-Feb-16
+        02:46:35 GMT; path=/; domain=.imgflip.com; HttpOnly
+      - claim_key=BZLEVwSuzcsjHSB-aprqL373ME5e8GW7; expires=Mon, 23-Feb-2015 04:46:35
+        GMT; Max-Age=7200; path=/
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Cf-Railgun:
+      - direct (starting new WAN connection)
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - User-Agent,Accept-Encoding
+      Cf-Ray:
+      - 1bd01809afd210c3-ORD
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"data":{"url":"http:\/\/i.imgflip.com\/hzsgd.jpg","page_url":"https:\/\/imgflip.com\/i\/hzsgd"}}'
+    http_version:
+  recorded_at: Mon, 23 Feb 2015 02:46:36 GMT
+recorded_with: VCR 2.9.3

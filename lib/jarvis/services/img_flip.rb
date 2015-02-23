@@ -35,6 +35,30 @@ private
       ImgFlipMemes::SuccessKid
     when /afraid to ask/i
       ImgFlipMemes::AfraidToAsk
+    when /and it'?s gone/i
+      ImgFlipMemes::AndItsGone
+    when /everywhere/i
+      ImgFlipMemes::Everywhere
+    when /you're gonna have a bad time/i
+      ImgFlipMemes::GonnaHaveABadTime
+    when /i don'?t always.+but when i do/i
+      ImgFlipMemes::MostInterestingMan
+    when /not sure if/i
+      ImgFlipMemes::NotSureIf
+    when /one does not simply/i
+      ImgFlipMemes::OneDoesNotSimply
+    when /overly attached girlfriend/i
+      ImgFlipMemes::OverlyAttachedGirlfriend
+    when /picard/i
+      ImgFlipMemes::Picard
+    when /sudden clarity/i
+      ImgFlipMemes::SuddenClarity
+    when /what if I told you/i
+      ImgFlipMemes::WhatIfIToldYou
+    when /willy wonka/i
+      ImgFlipMemes::WillyWonka
+    when /y u no/i
+      ImgFlipMemes::YUNo
     end
   end
 

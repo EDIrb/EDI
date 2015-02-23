@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.imgflip.com/caption_image
+    body:
+      encoding: UTF-8
+      string: template_id=61579&username=imgflip_user&password=imgflip_password&text0=One%20Does%20Not%20Simply&text1=write%20rspecs
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 23 Feb 2015 02:38:00 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=38425547e60dd43ac5e2e6d50b4b7d3d; path=/
+      - __cfduid=d7fe0b069b8adcf709901c03cc92a9b371424659080; expires=Tue, 23-Feb-16
+        02:38:00 GMT; path=/; domain=.imgflip.com; HttpOnly
+      - claim_key=pt5xd4yd0fSDWw49vJwrW_ZaniNZC8uh; expires=Mon, 23-Feb-2015 04:37:59
+        GMT; Max-Age=7200; path=/
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Cf-Railgun:
+      - direct (starting new WAN connection)
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - User-Agent,Accept-Encoding
+      Cf-Ray:
+      - 1bd00b73379e10c3-ORD
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"data":{"url":"http:\/\/i.imgflip.com\/hzs4e.jpg","page_url":"https:\/\/imgflip.com\/i\/hzs4e"}}'
+    http_version:
+  recorded_at: Mon, 23 Feb 2015 02:38:00 GMT
+recorded_with: VCR 2.9.3
