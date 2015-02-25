@@ -7,6 +7,6 @@ Jarvis.configure do |config|
   # config.default_response = "What is this, I don't even"
 
   # Add additional autoload directories to autoload_paths
-  # config.autoload_paths << "#{Jarvis.root}/bot/models"
+  # config.autoload_paths += "bot/models"
 end
 Jarvis.bootstrap

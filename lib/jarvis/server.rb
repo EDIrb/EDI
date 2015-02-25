@@ -8,7 +8,7 @@ module Jarvis
     register Sinatra::MultiRoute
 
     get "/" do
-      json text: "Hello, I'm Jarvis"
+      json text: Jarvis::ArrayResponder.new(Jarvis.config.hello_message).respond
     end
 
     route :get, :post, "/jarvis" do
