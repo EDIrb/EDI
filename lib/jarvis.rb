@@ -12,6 +12,7 @@ require 'jarvis/api/response'
 require 'jarvis/configuration'
 require 'jarvis/http_utilities'
 require 'jarvis/application'
+require 'jarvis/utilities/array_responder'
 module Jarvis
   class << self
     attr_accessor :services

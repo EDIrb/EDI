@@ -1,14 +1,5 @@
 class NullService < Jarvis::Service
   def run
-    responses.sample
-  end
-
-private
-
-  def responses
-    case Jarvis.config.default_response
-    when String then [Jarvis.config.default_response]
-    when Array then Jarvis.config.default_response
-    end
+    Jarvis::ArrayResponder.new(Jarvis.config.default_response).respond
   end
 end

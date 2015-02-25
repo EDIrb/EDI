@@ -17,11 +17,11 @@ module Jarvis
       begin
         json text: run_service(service)
       rescue Jarvis::UnfitEnvironmentException => e
-        json text: "I'm really sorry, but that service needs to be configured"
+        json text: Jarvis::ArrayResponder.new(Jarvis.config.unfit_environment_response).respond
       rescue Jarvis::ThirdPartyAPIFailure
-        json text: "Most unfortunately, #{params["user_name"]}, that service is not working right now."
+        json text: Jarvis::ArrayResponder.new(Jarvis.config.third_party_api_failure_respone).respond
       rescue => e
-        json text: "I'm sorry, Something went wrong: #{e}"
+        json text: Jarvis::ArrayResponder.new(Jarvis.config.standard_error_response).respond
       end
     end
 
