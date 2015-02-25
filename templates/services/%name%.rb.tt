@@ -1,0 +1,5 @@
+class <%= Thor::Util.camel_case(name) %> < Jarvis::Service
+  # See https://github.com/DVG/jarvis-cli for information on creating services
+  def run
+  end
+end

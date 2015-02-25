@@ -3,6 +3,8 @@ module Jarvis
   class CLI < Thor
     include Thor::Actions
 
+    attr_reader :name
+
     desc "new BOT_NAME", "Sets up a new Jarvis project"
     def new(name)
       @name = Thor::Util.snake_case(name)
@@ -29,7 +31,7 @@ private
     end
 
     def generate_service(name)
-      directory("bot/services", name)
+      template("services/%name%.rb.tt", "bot/services/#{name}.rb")
     end
   end
 end
