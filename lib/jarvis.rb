@@ -9,19 +9,11 @@ require 'jarvis/refinements'
 require 'jarvis/services'
 require 'jarvis/slack'
 require 'jarvis/api/response'
-require 'httparty'
-require 'uri'
-require 'active_support/configurable'
-
+require 'jarvis/configuration'
+require 'jarvis/http_utilities'
+require 'jarvis/application'
 module Jarvis
-  include HTTParty
-  include ActiveSupport::Configurable
-
-  self.configure do |config|
-  end
-
   class << self
-
     attr_accessor :services
     def services
       @services ||= []
@@ -36,33 +28,15 @@ module Jarvis
       @services = []
     end
 
-    # HTTP Requests
-    def get(path, options={}, &block)
-      Jarvis::API::Response.new HTTParty.get(path, options, &block)
+    def bootstrap
+      require File.join Jarvis.root, "config", "environment"
+      Jarvis::Application.initialize!
     end
 
-    def post(path, options={}, &block)
-      Jarvis::API::Response.new HTTParty.post(path, options, &block)
-    end
-
-    def patch(path, options={}, &block)
-      Jarvis::API::Response.new HTTParty.patch(path, options, &block)
-    end
-
-    def put(path, options={}, &block)
-      Jarvis::API::Response.new HTTParty.put(path, options, &block)
-    end
-
-    def delete(path, options={}, &block)
-      Jarvis::API::Response.new HTTParty.delete(path, options, &block)
-    end
-
-    def encode_uri(str)
-      URI.encode(str)
-    end
-
-    def decode_uri(str)
-      URI.decode(str)
+    def root
+      self.config.root
     end
   end
+  include Jarvis::HTTPUtilities
+  include Jarvis::Configuration
 end

@@ -9,8 +9,8 @@ module Jarvis
       directory(:project, @name)
     end
 
-    desc "boot", "Bootup the Jarvis Application"
-    def boot(*args)
+    desc "start", "Bootup the Jarvis Application"
+    def start(*args)
       port_option = args.include?('-p') ? '' : ' -p 3030'
       command = "rackup #{port_option}"
       run_command(command)
