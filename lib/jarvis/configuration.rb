@@ -9,7 +9,6 @@ module Jarvis
         config.default_response = "What is this, I don't even"
         config.autoload_paths = ["#{Jarvis.root}/app/services"]
       end
-      base.
     end
   end
 end

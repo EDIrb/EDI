@@ -1,5 +1,3 @@
 $: << File.expand_path('../', __FILE__)
-require 'jarvis'
-Jarvis.configure { |config| config.root = File.dirname(__FILE__) }
-Jarvis.bootstrap
+require File.join File.dirname(__FILE__), "config/environment"
 run Server

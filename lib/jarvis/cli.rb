@@ -16,10 +16,20 @@ module Jarvis
       run_command(command)
     end
 
+    desc "generate", "Generate service NAME"
+    def generate(type, name)
+      @name = Thor::Util.snake_case(name)
+      generate_service(@name)
+    end
+
 private
 
     def run_command(command)
       system(command)
+    end
+
+    def generate_service(name)
+      directory("bot/services", name)
     end
   end
 end
