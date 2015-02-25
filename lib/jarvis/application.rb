@@ -6,7 +6,6 @@ module Jarvis
     end
 
     def self.require_initializers
-      debugger
       Dir[Jarvis.root + '/config/initializers/*.rb'].each do |file|
         require file
       end
