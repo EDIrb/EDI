@@ -33,7 +33,7 @@ module EDI
     end
 
     def self.start_keepalive
-      EDI.keepalive
+      EDI.keepalive if EDI.config.attempt_keepalive
     end
   end
 end

@@ -3,6 +3,7 @@ require 'active_support/string_inquirer'
 require 'edi/core_ext'
 require "edi/version"
 require 'edi/server'
+require 'edi/dsl'
 require 'edi/service'
 require 'edi/exceptions'
 require 'edi/interpreter'
@@ -14,7 +15,7 @@ require 'edi/configuration'
 require 'edi/http_utilities'
 require 'edi/application'
 require 'edi/utilities/array_responder'
-require 'edi/scheduler'
+require 'edi/schedule'
 module EDI
   class << self
     attr_accessor :services
@@ -47,6 +48,7 @@ module EDI
     def env=(environment)
       self.config.environment = ActiveSupport::StringInquirer.new(environment)
     end
+
   end
   include EDI::HTTPUtilities
   include EDI::Configuration
