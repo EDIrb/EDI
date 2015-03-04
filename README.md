@@ -1,16 +1,8 @@
-# edi CLI [![Build Status](https://travis-ci.org/DVG/edi.svg?branch=master)](https://travis-ci.org/DVG/edi)
+# EDI [![Build Status](https://travis-ci.org/DVG/EDI.svg?branch=master)](https://travis-ci.org/DVG/EDI)
 
 ## Warning, these instructions are not true yet, but they will be!
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'edi', require: 'edi'
-
-And then execute:
-
-    $ bundle
 
 Or install it yourself as:
 
@@ -130,7 +122,7 @@ When these things are done, we'll be ready for 1.0
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/edi_server/fork )
+1. Fork it ( https://github.com/DVG/EDI/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
