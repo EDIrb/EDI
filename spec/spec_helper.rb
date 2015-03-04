@@ -2,39 +2,39 @@ ENV['RACK_ENV'] = 'test'
 require 'rspec'
 require 'rack/test'
 require 'json'
-require 'jarvis'
+require 'edi'
 require 'byebug'
 require 'vcr'
 require_relative './support/shared_contexts/service'
 require_relative './support/shared_contexts/server'
-require 'jarvis/test_support/test_support'
+require 'edi/test_support/test_support'
 
 include Rack::Test::Methods
-include Jarvis::TestSupport
+include EDI::TestSupport
 
 def app
-  Jarvis::Server
+  EDI::Server
 end
 
 RSpec.configure do |config|
   config.expose_dsl_globally = false
   config.around(:each) do |example|
-    class TestService < Jarvis::Service
+    class TestService < EDI::Service
       def run
 
       end
     end
-    class OtherTestService < Jarvis::Service
+    class OtherTestService < EDI::Service
       def run
 
       end
     end
-    class TestServer < Jarvis::Server
+    class TestServer < EDI::Server
     end
 
     example.run
 
-    Jarvis.clear_services
+    EDI.clear_services
 
     Object.send :remove_const, :TestServer
     Object.send :remove_const, :TestService

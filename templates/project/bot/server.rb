@@ -1,6 +1,6 @@
-class Server < Jarvis::Server
-  # Use `register_services` to enable services in your Jarvis Bot. Available built-in services are:
+class Server < EDI::Server
+  # Use `register_services` to enable services in your EDI Bot. Available built-in services are:
   # :dice, :eightball, :fact, :giphy, :i_heart_quotes
-  # You can make your own services with `jarvis generate service my_service`
+  # You can make your own services with `edi generate service my_service`
   register_services :fact
 end

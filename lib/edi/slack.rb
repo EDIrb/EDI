@@ -1,0 +1,1 @@
+require 'edi/slack/message'

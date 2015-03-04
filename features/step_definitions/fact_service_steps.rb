@@ -1,7 +1,7 @@
-When(/^Jarvis recieves the message "(.*?)"$/) do |message|
-  @response = post("/jarvis", slack_outgoing_message(text: message))
+When(/^EDI recieves the message "(.*?)"$/) do |message|
+  @response = post("/edi", slack_outgoing_message(text: message))
 end
 
-Then(/^Jarvis will respond with "(.*?)"$/) do |message|
+Then(/^EDI will respond with "(.*?)"$/) do |message|
   expect(parsed_response(@response)).to eq message
 end

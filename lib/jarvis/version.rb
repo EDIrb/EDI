@@ -1,3 +1,0 @@
-module Jarvis
-  VERSION = "0.1.2"
-end

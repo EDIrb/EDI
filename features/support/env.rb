@@ -1,20 +1,20 @@
 require 'cucumber'
-require 'jarvis'
+require 'edi'
 require 'rack/test'
 require 'byebug'
 require 'json'
 require 'capybara/cucumber'
 require 'vcr'
 require 'webmock'
-require 'jarvis/test_support/test_support'
-require 'jarvis/test_support/cucumber'
+require 'edi/test_support/test_support'
+require 'edi/test_support/cucumber'
 
 
 include Rack::Test::Methods
-include Jarvis::TestSupport
+include EDI::TestSupport
 
 Before do
-  class Server < Jarvis::Server
+  class Server < EDI::Server
   end
   Capybara.app = Server
 end

@@ -11,7 +11,7 @@ Given(/^the Tweet That is configured$/) do
 end
 
 When(/^the user (.+) post a message to the general channel saying "(.*?)"$/) do |user_name, message|
-  @response = post("/jarvis", slack_outgoing_message(text: message, channel_id: general_channel_id, user_name: user_name))
+  @response = post("/edi", slack_outgoing_message(text: message, channel_id: general_channel_id, user_name: user_name))
 end
 
 def general_channel_id

@@ -1,1 +1,0 @@
-require 'jarvis/slack/message'
