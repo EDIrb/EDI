@@ -134,6 +134,7 @@ In this example EDI is going to check the CI status of the project, and post a m
 
 Unlike Services, Jobs have to opt-in to posting to the chatroom with the `post` method. Jobs that run frequently may not always make a post.
 
+EDI Schedule is in-process and in-memory. It will not persist in cron if EDI shuts down. You can use the `enable_keepalive` configuration option to have EDI try and stay awake on Heroku
 
 ### Configuration
 
@@ -143,6 +144,7 @@ The following config values are available for Jobs:
 EDI.configure do |config|
   config.slack_incoming_webhook_url # Required, the Incoming Webhook for your slack chatroom
   config.job_default_channel # Defaults to #general, but you can specify a different Default Channel. This will be used if you don't specify a channel in the job
+  config.enable_keepalive # If you are on heroku, this will attempt to keep your dyno alive.
 end
 ```
 
