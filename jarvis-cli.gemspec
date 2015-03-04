@@ -36,4 +36,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "activesupport"
   spec.add_dependency "hooks"
   spec.add_dependency "twitter"
+  spec.add_dependency "rufus-scheduler"
 end

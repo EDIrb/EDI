@@ -25,6 +25,10 @@ module Jarvis
       end
     end
 
+    get "/keepalive" do
+      json text: "Blah"
+    end
+
     def self.register_services(*args)
       Jarvis.register_services *args
     end

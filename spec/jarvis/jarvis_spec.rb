@@ -19,4 +19,11 @@ RSpec.describe Jarvis do
     it { expect(Jarvis.decode_uri("hello%20world")).to eq "hello world" }
   end
 
+  describe "Environment" do
+    before { Jarvis.env = "production" }
+    it { expect(Jarvis.env).to eq "production" }
+    it { expect(Jarvis.env.production?).to eq true }
+    it { expect(Jarvis.env.test?).to eq false }
+  end
+
 end

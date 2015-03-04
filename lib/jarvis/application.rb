@@ -7,6 +7,15 @@ module Jarvis
       autoload_paths
       require File.join Jarvis.root, "bot/server"
       require_initializers
+      initialize_hostname_and_port
+      start_keepalive
+    end
+
+    def self.initialize_hostname_and_port
+      if Jarvis.env.development?
+        Jarvis.config.host = "http://127.0.0.1"
+        Jarvis.config.port ||= ENV["JARVIS_PORT"]
+      end
     end
 
     def self.require_initializers
@@ -21,6 +30,10 @@ module Jarvis
 
     def self.add_jarvis_root_to_load_path
       $: << Jarvis.root
+    end
+
+    def self.start_keepalive
+      Jarvis.keepalive
     end
   end
 end

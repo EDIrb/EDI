@@ -1,4 +1,5 @@
 require 'active_support'
+require 'active_support/string_inquirer'
 require 'jarvis/core_ext'
 require "jarvis/version"
 require 'jarvis/server'
@@ -13,6 +14,7 @@ require 'jarvis/configuration'
 require 'jarvis/http_utilities'
 require 'jarvis/application'
 require 'jarvis/utilities/array_responder'
+require 'jarvis/scheduler'
 module Jarvis
   class << self
     attr_accessor :services
@@ -36,6 +38,14 @@ module Jarvis
 
     def root
       self.config.root
+    end
+
+    def env
+      self.config.environment ||= ActiveSupport::StringInquirer.new(ENV["JARVIS_ENV"] || ENV["RACK_ENV"] || "development")
+    end
+
+    def env=(environment)
+      self.config.environment = ActiveSupport::StringInquirer.new(environment)
     end
   end
   include Jarvis::HTTPUtilities
