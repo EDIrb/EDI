@@ -120,19 +120,13 @@ end
 
 When these things are done, we'll be ready for 1.0
 
-✓ Finish Porting The Services from the original bot to the framework
-
-☐ Ability for Jarvis to Post Back into the Slack Chatroom
-
-☐ Jarvis::Schedule
-
-☐ Add Test Framework to the Project Generator
-
-✓ Service Generator
-
-✓ Configure All The Things
-
-✓ Boot Process for the Generated App
+- [x] Finish Porting The Services from the original bot to the framework
+- [ ] Ability for Jarvis to Post Back into the Slack Chatroom
+- [ ] Jarvis::Schedule
+- [ ] Add Test Framework to the Project Generator
+- [x] Service Generator
+- [x] Configure All The Things
+- [x] Boot Process for the Generated App
 
 ## Contributing
 
