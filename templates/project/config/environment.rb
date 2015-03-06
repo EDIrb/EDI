@@ -8,8 +8,5 @@ EDI.configure do |config|
 
   # Add additional autoload directories to autoload_paths
   # config.autoload_paths += "bot/models"
-  
-  # Set up slack incoming Webhook URL so EDI can post to the chatroom without being prompted
-  # config.incoming_webhook_url = https://hooks.slack.com/services/your/webhook/url
 end
 EDI.bootstrap

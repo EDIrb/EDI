@@ -1,6 +1,7 @@
 module EDI
   class Service
     include ::EDI::DSL
+    include ::EDI::Environment
 
     attr_accessor :message, :response
     def initialize(message)

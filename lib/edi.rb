@@ -4,6 +4,8 @@ require 'edi/core_ext'
 require "edi/version"
 require 'edi/server'
 require 'edi/dsl'
+require 'edi/postable'
+require 'edi/environment'
 require 'edi/service'
 require 'edi/exceptions'
 require 'edi/interpreter'
