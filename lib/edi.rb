@@ -18,6 +18,7 @@ require 'edi/http_utilities'
 require 'edi/application'
 require 'edi/utilities/array_responder'
 require 'edi/schedule'
+require 'edi/job'
 module EDI
   class << self
     attr_accessor :services

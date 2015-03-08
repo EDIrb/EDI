@@ -15,7 +15,7 @@ module EDI
       }
       EDI.post(slack_webhook_url, body: body.to_json)
     end
-    
+
     def post_to_slack(message)
       begin
         validate_environment

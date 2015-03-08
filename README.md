@@ -42,7 +42,7 @@ class MyService < EDI::Service
 end
 ```
 
-If a service is Registered in `app/server.rb` but does not have it's expected environment, edi will throw an exception and respond with a polite refusal to execute the service. This message can be set in your EDI configuration. The enviornment method will also create a getter method for each environment variable.
+If a service is Registered in `bot/server.rb` but does not have it's expected environment, edi will throw an exception and respond with a polite refusal to execute the service. This message can be set in your EDI configuration. The enviornment method will also create a getter method for each environment variable.
 
 ### Service Routing
 
@@ -95,11 +95,12 @@ You can do actions before or after the service is run, but before edi responds. 
 
 ```ruby
 class Joke < EDI::Service
+  include Postable
   before_invoke :setup
   invoke_with :punch
 
   def setup
-    Slack::Post.new(channel_id, "What do you call a fish with no eyes?").send_message
+    post_to_slack("What do you call a fish with no eyes?", channel: channel_id)
     sleep 1
   end
 
@@ -124,7 +125,7 @@ class CIStatus < EDI::Job
   def check_ci
     edi = Travis::Repository.find('DVG/EDI')
     if edi.last_build.failed?
-      post("Oh noes, the build is broken!")
+      post_to_slack("Oh noes, the build is broken!")
     end
   end
 end
