@@ -1,7 +1,6 @@
 source "https://rubygems.org"
 
-gem 'edi', path: "../../"
-gem 'unicorn'
+gem 'edi'
 group :development, :test do
   gem 'byebug'
 end
