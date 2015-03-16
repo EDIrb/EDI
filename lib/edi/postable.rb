@@ -2,9 +2,9 @@ module EDI
   module Postable
 
     module ClassMethods
-      attr_accessor :post_channel
+      attr_accessor :_channel
       def channel(channel)
-        @post_channel = channel
+        @_channel = channel
       end
     end
 
@@ -12,7 +12,7 @@ module EDI
     def _actually_post(message:, channel: nil)
       body = {
         text: message,
-        channel: channel || self.class.post_channel || "#general"
+        channel: channel || self.class._channel || EDI.config.default_channel
       }
       EDI.post(slack_webhook_url, body: body.to_json)
     end

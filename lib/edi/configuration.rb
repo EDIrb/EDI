@@ -6,7 +6,6 @@ module EDI
     def self.included(base)
       base.include ActiveSupport::Configurable
       base.configure do |config|
-
         # Bot Name
         config.bot_name = "EDI"
 
@@ -20,6 +19,9 @@ module EDI
 
         # Autoload Services
         config.autoload_paths = ["bot/services"]
+
+        # Postable Configuration
+        config.default_channel = "#general"
       end
     end
   end
