@@ -100,7 +100,7 @@ class Joke < EDI::Service
   invoke_with :punch
 
   def setup
-    post_to_slack("What do you call a fish with no eyes?", channel: channel_id)
+    post_to_slack(message: "What do you call a fish with no eyes?", channel: "##{channel_name}")
     sleep 1
   end
 
@@ -125,7 +125,7 @@ class CIStatus < EDI::Job
   def check_ci
     edi = Travis::Repository.find('DVG/EDI')
     if edi.last_build.failed?
-      post_to_slack("Oh noes, the build is broken!")
+      post_to_slack(message: "Oh noes, the build is broken!")
     end
   end
 end
