@@ -12,7 +12,7 @@ RSpec.describe EDI::Postable, vcr: { cassette_name: 'postable', :record => :new_
   describe "post_to_slack" do
     before { stub_env("SLACK_WEBHOOK_URL" => "http://api.slack.com/my/webhook/url") }
     it "posts to the configured channel" do
-      expect(subject.new.post_to_slack("Hello World").status).to eq 200
+      expect(subject.new.post_to_slack(message: "Hello World").status).to eq 200
     end
   end
 
@@ -20,7 +20,16 @@ RSpec.describe EDI::Postable, vcr: { cassette_name: 'postable', :record => :new_
     before { stub_env("SLACK_WEBHOOK_URL" => nil) }
     it "validates environment" do
       expect(EDI).to_not receive(:post)
-      subject.new.post_to_slack "Hello World"
+      subject.new.post_to_slack message: "Hello World"
+    end
+  end
+
+  describe "Can override class-level channel definition by passing channel" do
+    before { stub_env("SLACK_WEBHOOK_URL" => "http://api.slack.com/my/webhook/url") }
+    let(:expected_body) { {text: "Hello World", channel: "#edi_testing"}.to_json }
+    it "posts with the passed in channel" do
+      expect(EDI).to receive(:post).with(ENV["SLACK_WEBHOOK_URL"], :body => expected_body)
+      subject.new.post_to_slack(message: "Hello World", channel: "#edi_testing")
     end
   end
 end

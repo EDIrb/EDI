@@ -8,21 +8,23 @@ module EDI
       end
     end
 
-    def actually_post(message)
+    private
+    def _actually_post(message:, channel: nil)
       body = {
         text: message,
-        channel: self.class.post_channel || "#general"
+        channel: channel || self.class.post_channel || "#general"
       }
       EDI.post(slack_webhook_url, body: body.to_json)
     end
 
-    def post_to_slack(message)
+    public
+    def post_to_slack(message:, channel: nil)
       begin
         validate_environment
       rescue EDI::UnfitEnvironmentException
         return
       end
-      actually_post(message)
+      _actually_post(message: message, channel: channel)
     end
 
 
