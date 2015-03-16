@@ -1,5 +1,4 @@
 require 'thor'
-require 'byebug'
 module EDI
   class CLI < Thor
     include Thor::Actions
