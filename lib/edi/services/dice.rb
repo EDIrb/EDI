@@ -19,7 +19,7 @@ private
   end
 
   def roll(sides)
-    Random.rand(sides)
+    Random.rand(sides+1)
   end
 
 end
