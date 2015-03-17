@@ -106,18 +106,6 @@ class Joke < EDI::Service
 end
 ```
 
-### Configuration
-
-The following config values are available for Jobs:
-
-```
-EDI.configure do |config|
-  config.slack_incoming_webhook_url # Required, the Incoming Webhook for your slack chatroom
-  config.job_default_channel # Defaults to #general, but you can specify a different Default Channel. This will be used if you don't specify a channel in the job
-  config.enable_keepalive # If you are on heroku, this will attempt to keep your dyno alive.
-end
-```
-
 ## Ship List
 
 When these things are done, we'll be ready for 1.0
