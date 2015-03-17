@@ -2,8 +2,6 @@
 
 ## Installation
 
-Or install it yourself as:
-
     $ gem install edi
 
 ## Usage
@@ -108,33 +106,6 @@ class Joke < EDI::Service
 end
 ```
 
-## Jobs
-
-Jobs are just Services that occur at a regular interval or specific time instead of in response to a message.
-
-They can be used to poll your CI status and let the Team know if the build is broken, or tell a joke once in awhile, or inform the team of the weather before everyone drives in.
-
-```ruby
-require 'travis'
-class CIStatus < EDI::Job
-  every "1m" :check_ci
-  channel "#general"
-
-  def check_ci
-    edi = Travis::Repository.find('DVG/EDI')
-    if edi.last_build.failed?
-      post_to_slack(message: "Oh noes, the build is broken!")
-    end
-  end
-end
-```
-
-In this example EDI is going to check the CI status of the project, and post a message to the general channel if it fails.
-
-Unlike Services, Jobs have to opt-in to posting to the chatroom with the `post` method. Jobs that run frequently may not always make a post.
-
-EDI Schedule is in-process and in-memory. It will not persist in cron if EDI shuts down. You can use the `enable_keepalive` configuration option to have EDI try and stay awake on Heroku
-
 ### Configuration
 
 The following config values are available for Jobs:
@@ -153,7 +124,7 @@ When these things are done, we'll be ready for 1.0
 
 - [x] Finish Porting The Services from the original bot to the framework
 - [x] Ability for edi to Post Back into the Slack Chatroom
-- [ ] EDI::Schedule
+- [ ] Jobs and Scheduling
 - [ ] Add Test Framework to the Project Generator
 - [x] Service Generator
 - [x] Configure All The Things
