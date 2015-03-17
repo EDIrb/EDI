@@ -1,7 +1,5 @@
 # EDI [![Build Status](https://travis-ci.org/DVG/EDI.svg?branch=master)](https://travis-ci.org/DVG/EDI)
 
-## Warning, these instructions are not true yet, but they will be!
-
 ## Installation
 
 Or install it yourself as:
@@ -154,7 +152,7 @@ end
 When these things are done, we'll be ready for 1.0
 
 - [x] Finish Porting The Services from the original bot to the framework
-- [ ] Ability for edi to Post Back into the Slack Chatroom
+- [x] Ability for edi to Post Back into the Slack Chatroom
 - [ ] EDI::Schedule
 - [ ] Add Test Framework to the Project Generator
 - [x] Service Generator
