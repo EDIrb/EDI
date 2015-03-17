@@ -3,20 +3,7 @@ require 'edi/services/img_flip_memes/base_meme'
 Dir[File.dirname(__FILE__) + '/img_flip_memes/*.rb'].each {|file| require file }
 
 class ImgFlip < EDI::Service
-  interpreter_pattern /you're gonna have a bad time|
-    and it'?s gone|
-    afraid to ask|
-    sudden clarity|
-    success kid|
-    not sure if|
-    picard|
-    one does not simply|
-    y u no|
-    what if i told you|
-    willy wonka|
-    overly attached girlfriend|
-    everywhere|
-    i don'?t always.+but when i do'?/xi
+  interpreter_pattern /you're gonna have a bad time|and it'?s gone|afraid to ask|sudden clarity|success kid|not sure if|picard|one does not simply|y u no|what if i told you|willy wonka|overly attached girlfriend|everywhere|i don'?t always.+but when i do'?/i
 
   environment :imgflip_user, :imgflip_password
   before_invoke :create_meme
