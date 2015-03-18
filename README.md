@@ -118,6 +118,21 @@ When these things are done, we'll be ready for 1.0
 - [x] Configure All The Things
 - [x] Boot Process for the Generated App
 
+## Upcoming Features
+
+This stuff isn't true yet, think of this section as a scratchpad for designs to be.
+
+### Messages
+
+You can make special classes that model special messages you'd like EDI to send into slack. These have all the functionality of Slack's Message Attachments for making richly formatted messages.
+
+```ruby
+class CiMessage < EDI::Message
+  channel "#general":w
+
+end
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/DVG/EDI/fork )
