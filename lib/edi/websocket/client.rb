@@ -10,7 +10,7 @@ module Websocket
     end
 
     def connect
-      self.ws_url = EDI.get("https://slack.com/api/rtm.start?token=#{ENV["SLACK_TOKEN"]}").response["url"]
+      self.ws_url = EDI.get("https://slack.com/api/rtm.start?token=#{EDI.bot_token}").response["url"]
       EM.run {
 
         self.client = Faye::WebSocket::Client.new(ws_url)
@@ -21,7 +21,7 @@ module Websocket
 
         # Respond to Messages
         client.on :message do |event|
-          incoming_message = Slack::WebsocketIncomingMessage.new(event.data).message
+          incoming_message = Slack::WebsocketIncomingMessage.new(event.data)
           if incoming_message.should_respond?
             response_text = ""
             service = Proc.new { response_text = EDI.runner.new(message: incoming_message).execute }

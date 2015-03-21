@@ -22,6 +22,9 @@ module EDI
 
         # Postable Configuration
         config.default_channel = "#general"
+
+        # Bot Token Variable
+        config.bot_token = ENV["SLACK_EDI_TOKEN"]
       end
     end
   end
