@@ -10,7 +10,7 @@ module Websocket
     end
 
     def connect
-      self.ws_url = EDI.get("https://slack.com/api/rtm.start?token=#{ENV["SLACK_TOKEN"]}").response["url"]
+      self.ws_url = EDI.get("https://slack.com/api/rtm.start?token=#{EDI.bot_token}").response["url"]
       EM.run {
 
         self.client = Faye::WebSocket::Client.new(ws_url)
