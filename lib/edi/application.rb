@@ -3,9 +3,9 @@ module EDI
     require 'active_support/dependencies'
 
     def self.initialize!
-      add_jarvis_root_to_load_path
+      add_edi_root_to_load_path
       autoload_paths
-      require File.join EDI.root, "bot/server"
+      require File.join EDI.root, "bot/core"
       require_initializers
       connect_websocket
     end
@@ -20,7 +20,7 @@ module EDI
       ActiveSupport::Dependencies.autoload_paths += EDI.config.autoload_paths
     end
 
-    def self.add_jarvis_root_to_load_path
+    def self.add_edi_root_to_load_path
       $: << EDI.root
     end
 

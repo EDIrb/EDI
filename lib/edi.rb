@@ -62,6 +62,10 @@ module EDI
       ServiceRunner
     end
 
+    def bot_name
+      self.config.bot_name
+    end
+
   end
   include EDI::HTTPUtilities
   include EDI::Configuration
