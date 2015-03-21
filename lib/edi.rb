@@ -11,6 +11,7 @@ require 'edi/exceptions'
 require 'edi/interpreter'
 require 'edi/refinements'
 require 'edi/services'
+require 'edi/service_runner'
 require 'edi/slack'
 require 'edi/api/response'
 require 'edi/configuration'
@@ -19,9 +20,10 @@ require 'edi/application'
 require 'edi/utilities/array_responder'
 require 'edi/schedule'
 require 'edi/job'
+require 'edi/websocket'
 module EDI
   class << self
-    attr_accessor :services
+    attr_accessor :services, :websocket
     def services
       @services ||= []
     end
@@ -50,6 +52,14 @@ module EDI
 
     def env=(environment)
       self.config.environment = ActiveSupport::StringInquirer.new(environment)
+    end
+
+    def websocket
+      @websocket ||= Websocket::Client.new
+    end
+
+    def runner
+      ServiceRunner
     end
 
   end

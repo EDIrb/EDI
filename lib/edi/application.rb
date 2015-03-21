@@ -7,15 +7,7 @@ module EDI
       autoload_paths
       require File.join EDI.root, "bot/server"
       require_initializers
-      initialize_hostname_and_port
-      start_keepalive
-    end
-
-    def self.initialize_hostname_and_port
-      if EDI.env.development?
-        EDI.config.host = "http://127.0.0.1"
-        EDI.config.port ||= ENV["JARVIS_PORT"]
-      end
+      connect_websocket
     end
 
     def self.require_initializers
@@ -32,8 +24,9 @@ module EDI
       $: << EDI.root
     end
 
-    def self.start_keepalive
-      EDI.keepalive if EDI.config.attempt_keepalive
+    def self.connect_websocket
+      EDI.websocket.connect
     end
+
   end
 end

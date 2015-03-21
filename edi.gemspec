@@ -29,12 +29,11 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "guard-rspec"
   spec.add_development_dependency "guard-cucumber"
   spec.add_development_dependency "terminal-notifier-guard"
-  spec.add_dependency "sinatra"
-  spec.add_dependency "sinatra-contrib"
   spec.add_dependency "httparty"
   spec.add_dependency "thor"
   spec.add_dependency "activesupport"
   spec.add_dependency "hooks"
   spec.add_dependency "twitter"
   spec.add_dependency "rufus-scheduler"
+  spec.add_dependency "faye-websocket"
 end

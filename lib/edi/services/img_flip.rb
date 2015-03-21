@@ -11,7 +11,7 @@ class ImgFlip < EDI::Service
   attr_accessor :meme_link
 
   def run
-    "Here you go, #{user_name}\n\n#{meme_link}"
+    "#{meme_link}"
   end
 
 private
