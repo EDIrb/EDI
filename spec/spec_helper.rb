@@ -13,7 +13,7 @@ include Rack::Test::Methods
 include EDI::TestSupport
 
 def app
-  EDI::Server
+  EDI::Core
 end
 
 RSpec.configure do |config|
@@ -29,7 +29,7 @@ RSpec.configure do |config|
 
       end
     end
-    class TestServer < EDI::Server
+    class TestServer < EDI::Core
     end
 
     example.run

@@ -16,7 +16,7 @@ class TweetThat < EDI::Service
 
   def run
     self.tweet = post_tweet
-    "Here you are, #{user_name}, #{link}"
+    "#{link}"
   end
 
 private
