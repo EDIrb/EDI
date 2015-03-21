@@ -13,6 +13,6 @@ RSpec.describe TweetThat, vcr: { cassette_name: 'tweet_that', :record => :new_ep
     end
     let(:message) { Slack::Message.new(slack_outgoing_message(text: "EDI, tweet that", channel_id: "C0000001", user_name: "DVG")) }
     subject { described_class.new message }
-    it { expect(subject.invoke).to eq "Here you are, DVG, https://twitter.com/twitter_handle/status/569329768350380032" }
+    it { expect(subject.invoke).to eq "https://twitter.com/twitter_handle/status/569329768350380032" }
   end
 end

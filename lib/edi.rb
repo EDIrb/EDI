@@ -2,7 +2,7 @@ require 'active_support'
 require 'active_support/string_inquirer'
 require 'edi/core_ext'
 require "edi/version"
-require 'edi/server'
+require 'edi/core'
 require 'edi/dsl'
 require 'edi/postable'
 require 'edi/environment'
