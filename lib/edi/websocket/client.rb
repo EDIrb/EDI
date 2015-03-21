@@ -24,7 +24,7 @@ module Websocket
           incoming_message = Slack::WebsocketIncomingMessage.new(event.data)
           if incoming_message.should_respond?
             response_text = ""
-            service = Proc.new { response_text = EDI.runner.new(message: incoming_message.text).execute }
+            service = Proc.new { response_text = EDI.runner.new(message: incoming_message).execute }
             response = Proc.new { client.send Slack::WebsocketOutgoingMessage.new(text: response_text, channel: incoming_message.channel, id: id).to_json }
             EM.defer service, response
             increment_id
