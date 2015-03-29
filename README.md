@@ -106,6 +106,16 @@ class Joke < EDI::Service
 end
 ```
 
+## Deployment
+
+Since EDI is, under the hood, a web socket client, it can be deployed to any internet connected computer, and does not require a web server. Simple run
+
+```shell
+$ edi start -D
+```
+
+And EDI will connect to slack and will stay connected for the life of the process.
+
 ## Ship List
 
 When these things are done, we'll be ready for 1.0
@@ -117,6 +127,7 @@ When these things are done, we'll be ready for 1.0
 - [x] Service Generator
 - [x] Configure All The Things
 - [x] Boot Process for the Generated App
+- [x] Switch from sinatra-based incoming and outgoing webhooks to websocket-based implementation
 
 ## Upcoming Features
 
@@ -128,7 +139,7 @@ You can make special classes that model special messages you'd like EDI to send 
 
 ```ruby
 class CiMessage < EDI::Message
-  channel "#general":w
+  channel "#general"
 
 end
 ```

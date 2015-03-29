@@ -23,7 +23,7 @@ module Slack
 
     def mentions_edi?
       if text
-        text.match /#{EDI.bot_name}/i
+        !!text.match(/#{EDI.bot_name}(\W|$)/i)
       else
         false
       end
