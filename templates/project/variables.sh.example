@@ -1,0 +1,26 @@
+# Use this shell script to set up your environment variables.
+# Run cp variables.sh.example variables.sh
+
+# Slack API Token. Generate token at https://api.slack.com/web
+export SLACK_TOKEN=
+
+# Bot User Integration Token. Create your bot user integration at https://YOURTEAM.slack.com/services/new#diy
+export SLACK_EDI_TOKEN=
+
+# Giphy Service Configuration. Public Beta API Key Included Below
+export GIPHY_API_KEY=dc6zaTOxFJmzC
+export GIPHY_API_VERSION=v1
+
+# Tweet That Service Variables
+export TWITTER_ACCESS_TOKEN=
+export TWITTER_CONSUMER_KEY=
+export TWITTER_CONSUMER_SECRET=
+export TWITTER_HANDLE=
+export TWITTER_TOKEN_SECRET=
+
+# ImgFlip Service Variables. Set up a User at https://imgflip.com/signup
+export IMGFLIP_USER=
+export IMGFLIP_PASSWORD=
+
+# ZIP Code to use as the default location for the weather service.
+export DEFAULT_LOCATION=90210

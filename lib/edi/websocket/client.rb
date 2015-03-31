@@ -10,7 +10,11 @@ module Websocket
     end
 
     def connect
-      self.ws_url = EDI.get("https://slack.com/api/rtm.start?token=#{EDI.bot_token}").response["url"]
+      connection = EDI.get("https://slack.com/api/rtm.start?token=#{EDI.bot_token}").response
+      connection["channels"].each do |c|
+        EDI.add_channel Slack::Channel.new(name: c["name"], id: c["id"])
+      end
+      self.ws_url = connection["url"]
       EM.run {
 
         self.client = Faye::WebSocket::Client.new(ws_url)
@@ -23,6 +27,7 @@ module Websocket
         client.on :message do |event|
           incoming_message = Slack::WebsocketIncomingMessage.new(event.data)
           if incoming_message.should_respond?
+            puts "EDI received message #{incoming_message.text} in channel #{incoming_message.channel}"
             response_text = ""
             service = Proc.new { response_text = EDI.runner.new(message: incoming_message).execute }
             response = Proc.new { client.send Slack::WebsocketOutgoingMessage.new(text: response_text, channel: incoming_message.channel, id: id).to_json if response_text }
@@ -38,8 +43,21 @@ module Websocket
       }
     end
 
+    def send_message(message, channel_name: "general", channel_id: nil)
+      unless channel_id
+        channel_id = lookup_channel_by_name(channel_name).id
+      end
+      client.send Slack::WebsocketOutgoingMessage.new(text: message, channel: channel_id, id: id).to_json
+      increment_id
+    end
+
 private
 
+    def lookup_channel_by_name(name)
+      Slack::Channel.find_by_name(name)
+    end
+
+    # There has to be a way to do this better
     def increment_id
       self.id += 1
     end

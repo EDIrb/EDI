@@ -70,6 +70,18 @@ module EDI
       self.config.bot_token
     end
 
+    def channels
+      @channels ||= []
+    end
+
+    def add_channel(channel)
+      channels << channel
+    end
+
+    def send_message(message, channel_name: "general", channel_id: nil)
+      EDI.websocket.send_message(message, channel_name: channel_name, channel_id: channel_id)
+    end
+
   end
   include EDI::HTTPUtilities
   include EDI::Configuration
