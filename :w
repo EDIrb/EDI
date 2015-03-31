@@ -11,9 +11,8 @@ module Websocket
 
     def connect
       connection = EDI.get("https://slack.com/api/rtm.start?token=#{EDI.bot_token}").response
-      connection["channels"].each do |c|
-        EDI.add_channel Slack::Channel.new(name: c["name"], id: c["id"])
-      end
+      require 'byebug'
+      debugger
       self.ws_url = connection["url"]
       EM.run {
 
@@ -43,19 +42,12 @@ module Websocket
       }
     end
 
-    def send_message(message, channel_name: "general", channel_id: nil)
-      unless channel_id
-        channel_id = lookup_channel_by_name(channel_name).id
-      end
-      client.send Slack::WebsocketOutgoingMessage.new(text: message, channel: channel_id, id: id).to_json
+    def send_message(message)
+      client.send Slack::WebsocketOutgoingMessage.new(text: message, channel: "D046WN43L", id: id).to_json
       increment_id
     end
 
 private
-
-    def lookup_channel_by_name(name)
-      Slack::Channel.find_by_name(name)
-    end
 
     # There has to be a way to do this better
     def increment_id
