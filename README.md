@@ -1,4 +1,4 @@
-# EDI [![Build Status](https://travis-ci.org/DVG/EDI.svg?branch=master)](https://travis-ci.org/DVG/EDI) [![Code Climate](https://codeclimate.com/github/EDIrb/EDI/badges/gpa.svg)](https://codeclimate.com/github/EDIrb/EDI)
+# EDI [![Build Status](https://travis-ci.org/EDIrb/EDI.svg?branch=master)](https://travis-ci.org/EDIrb/EDI) [![Code Climate](https://codeclimate.com/github/EDIrb/EDI/badges/gpa.svg)](https://codeclimate.com/github/EDIrb/EDI)
 
 ![EDI Demo](demo.gif)
 
