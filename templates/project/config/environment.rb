@@ -2,7 +2,8 @@ require 'bundler/setup'
 Bundler.require(:default)
 EDI.configure do |config|
   config.root = File.expand_path "./"
-  # Your bot's name, not required for anything, but you can use it to have your bot speak it's name
+  # Your bot's name. Defaults to "EDI". Used to determine if your bot should respond to a given message, and can also be used
+  # to have your bot speak it's name via EDI.bot_name
   # config.bot_name = "EDI"
 
   # Default response is what EDI will say in response to a message that doesn't have a registered service.
@@ -23,8 +24,5 @@ EDI.configure do |config|
 
   # Add additional autoload directories to autoload_paths
   # config.autoload_paths += "bot/models"
-
-  # Default channel to post to using the post_to_slack method
-  # config.default_channel = "#general"
 end
 EDI.bootstrap
