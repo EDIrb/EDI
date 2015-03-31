@@ -18,11 +18,11 @@ $ edi new my-bot
 
 ### Registering Services
 
-`/bot/server.rb` is the main brain of your edi bot. Here you can register which services you want to be available on your chatbot.
+`bot/core.rb` is the main brain of your edi bot. Here you can register which services you want to be available on your chatbot.
 
 ```ruby
-class Server < EDI::Server
-  register_services :tweet_that, :img_flip, :urban_dictionary, :weather
+class Core < EDI::Core
+  register_services :tweet_that, :img_flip, :urban_dictionary, :weather, :joke
 end
 ```
 
@@ -38,7 +38,7 @@ class MyService < EDI::Service
 end
 ```
 
-If a service is Registered in `bot/server.rb` but does not have it's expected environment, edi will throw an exception and respond with a polite refusal to execute the service. This message can be set in your EDI configuration. The enviornment method will also create a getter method for each environment variable.
+If a service is Registered in `bot/core.rb` but does not have it's expected environment, edi will throw an exception and respond with a polite refusal to execute the service. This message can be set in your EDI configuration. The enviornment method will also create a getter method for each environment variable.
 
 ### Service Routing
 
@@ -91,13 +91,12 @@ You can do actions before or after the service is run, but before edi responds. 
 
 ```ruby
 class Joke < EDI::Service
-  include Postable
   before_invoke :setup
   invoke_with :punch
 
   def setup
-    post_to_slack(message: "What do you call a fish with no eyes?", channel: "##{channel_name}")
-    sleep 1
+    EDI.send_message("What do you call a fish with no eyes?", channel: channel)
+    sleep 2
   end
 
   def punch
@@ -111,7 +110,7 @@ end
 Since EDI is, under the hood, a web socket client, it can be deployed to any internet connected computer, and does not require a web server. Simple run
 
 ```shell
-$ edi start -D
+$ edi start
 ```
 
 And EDI will connect to slack and will stay connected for the life of the process.
@@ -128,21 +127,6 @@ When these things are done, we'll be ready for 1.0
 - [x] Configure All The Things
 - [x] Boot Process for the Generated App
 - [x] Switch from sinatra-based incoming and outgoing webhooks to websocket-based implementation
-
-## Upcoming Features
-
-This stuff isn't true yet, think of this section as a scratchpad for designs to be.
-
-### Messages
-
-You can make special classes that model special messages you'd like EDI to send into slack. These have all the functionality of Slack's Message Attachments for making richly formatted messages.
-
-```ruby
-class CiMessage < EDI::Message
-  channel "#general"
-
-end
-```
 
 ## Contributing
 
