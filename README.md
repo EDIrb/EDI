@@ -1,5 +1,7 @@
 # EDI [![Build Status](https://travis-ci.org/DVG/EDI.svg?branch=master)](https://travis-ci.org/DVG/EDI)
 
+![EDI Demo](demo.gif)
+
 ## Installation
 
     $ gem install edi
