@@ -1,3 +1,4 @@
+require 'yaml'
 module EDI
   class Application
     require 'active_support/dependencies'
@@ -29,10 +30,17 @@ module EDI
       EDI.websocket.connect
     end
 
-    def load_variables
-      require 'yaml'
-      ENV.merge YAML.load(File.join(EDI.root, "config/services.yml"))
-     end
+    def self.load_variables
+      load_yaml("config/services.yml").each do |key, value|
+        ENV[key] ||= value.to_s if value
+      end
+    end
+
+private
+
+    def self.load_yaml(file)
+      YAML.load File.open(File.join(EDI.root, file)).read
+    end
 
   end
 end
