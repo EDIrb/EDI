@@ -4,6 +4,7 @@ module EDI
 
     def self.initialize!
       add_edi_root_to_load_path
+      load_variables
       autoload_paths
       require File.join EDI.root, "bot/core"
       require_initializers
@@ -27,6 +28,11 @@ module EDI
     def self.connect_websocket
       EDI.websocket.connect
     end
+
+    def load_variables
+      require 'yaml'
+      ENV.merge YAML.load(File.join(EDI.root, "config/services.yml"))
+     end
 
   end
 end
