@@ -1,5 +1,5 @@
 # This file should hold your various variables required by your services. SLACK_EDI_TOKEN is the only absolutely required variable, the
-# rest are optional depending on which built-in services you want to use.
+# rest are optional depending on which built-in services you want to use. You should not check this file into source control
 
 # Bot User Integration Token. Create your bot user integration at https://YOURTEAM.slack.com/services/new#diy
 SLACK_EDI_TOKEN:
