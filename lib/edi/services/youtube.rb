@@ -5,7 +5,7 @@ class Youtube < EDI::Service
   before_invoke :extract_search_term
 
   def run
-    response = EDI.get "#{url}?#{params}"
+    response = EDI.get("#{url}?#{params}").response
     "https://youtu.be/#{response["items"].first["id"]["videoId"]}"
   end
 
@@ -13,7 +13,7 @@ private
 
   def extract_search_term
     captures = text.match /youtube(?<term>.+)/i
-    @search_term = captures[:term]
+    @search_term = EDI.encode_uri(captures[:term])
   end
 
   def url

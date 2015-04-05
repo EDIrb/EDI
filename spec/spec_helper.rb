@@ -49,5 +49,6 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.hook_into :webmock
   config.filter_sensitive_data("<SLACK_WEBHOOK_URL>") { ENV["SLACK_WEBHOOK_URL"] }
+  config.filter_sensitive_data("<GOOGLE_API_KEY>") { ENV["GOOGLE_API_KEY"] }
   config.allow_http_connections_when_no_cassette = true
 end
