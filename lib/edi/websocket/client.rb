@@ -11,8 +11,10 @@ module Websocket
 
     def connect
       connection = EDI.get("https://slack.com/api/rtm.start?token=#{EDI.bot_token}").response
-      connection["channels"].each do |c|
-        EDI.add_channel Slack::Channel.new(name: c["name"], id: c["id"])
+      if connection["channels"]
+        connection["channels"].each do |c|
+          EDI.add_channel Slack::Channel.new(name: c["name"], id: c["id"])
+        end
       end
       self.ws_url = connection["url"]
       EM.run {

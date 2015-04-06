@@ -1,9 +1,11 @@
+require 'yaml'
 module EDI
   class Application
     require 'active_support/dependencies'
 
     def self.initialize!
       add_edi_root_to_load_path
+      load_variables
       autoload_paths
       require File.join EDI.root, "bot/core"
       require_initializers
@@ -26,6 +28,18 @@ module EDI
 
     def self.connect_websocket
       EDI.websocket.connect
+    end
+
+    def self.load_variables
+      load_yaml("config/services.yml").each do |key, value|
+        ENV[key] ||= value.to_s if value
+      end
+    end
+
+private
+
+    def self.load_yaml(file)
+      YAML.load File.open(File.join(EDI.root, file)).read
     end
 
   end

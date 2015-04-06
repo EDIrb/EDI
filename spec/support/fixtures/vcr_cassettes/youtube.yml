@@ -1,0 +1,197 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?key=<GOOGLE_API_KEY>&order=rating&part=snippet&q=%20Harry%20Potter%20and%20the%20Half%20Blood%20Prince
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Sun, 05 Apr 2015 01:57:17 GMT
+      Date:
+      - Sun, 05 Apr 2015 01:57:17 GMT
+      Cache-Control:
+      - private, max-age=120, must-revalidate, no-transform
+      Etag:
+      - '"OZTVc5giYjExcw9vrLsdrwdwB4c/Rqfqq96fQLysaoXmdQeaV_LGsrw"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '4448'
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.5
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "youtube#searchListResponse",
+         "etag": "\"OZTVc5giYjExcw9vrLsdrwdwB4c/Rqfqq96fQLysaoXmdQeaV_LGsrw\"",
+         "nextPageToken": "CAUQAA",
+         "pageInfo": {
+          "totalResults": 450952,
+          "resultsPerPage": 5
+         },
+         "items": [
+          {
+           "kind": "youtube#searchResult",
+           "etag": "\"OZTVc5giYjExcw9vrLsdrwdwB4c/yLeseWVzdF_tBjtQAT-2T52hjic\"",
+           "id": {
+            "kind": "youtube#video",
+            "videoId": "9q5BT8eiLDk"
+           },
+           "snippet": {
+            "publishedAt": "2009-04-17T19:39:49.000Z",
+            "channelId": "UCYdxw1ouVnZR_gZrNRbhhkw",
+            "title": "Harry Potter and the Half-Blood Prince Trailer {# 5}",
+            "description": "Yes yes yea!! Another one. There are more scenes! I jut love it can't stop watching it! Finally #5.",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/9q5BT8eiLDk/default.jpg"
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/9q5BT8eiLDk/mqdefault.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/9q5BT8eiLDk/hqdefault.jpg"
+             }
+            },
+            "channelTitle": "harrypotter6fan",
+            "liveBroadcastContent": "none"
+           }
+          },
+          {
+           "kind": "youtube#searchResult",
+           "etag": "\"OZTVc5giYjExcw9vrLsdrwdwB4c/qlPZXlzYdU-GFypQUZqGWQ-mkj4\"",
+           "id": {
+            "kind": "youtube#video",
+            "videoId": "46f94wBRo1o"
+           },
+           "snippet": {
+            "publishedAt": "2014-02-24T09:51:17.000Z",
+            "channelId": "UCw_D-n1MuDfiD6l0trSywGw",
+            "title": "Harry's Last Daze (Harry Potter Series (Years 1-7) tribute)",
+            "description": "This is a montage/music video/tribute to the Harry Potter series. The song is Last Daze by Petra. Please leave comments and rate this video. My website is at ...",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/46f94wBRo1o/default.jpg"
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/46f94wBRo1o/mqdefault.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/46f94wBRo1o/hqdefault.jpg"
+             }
+            },
+            "channelTitle": "Coolkennyoptimus6",
+            "liveBroadcastContent": "none"
+           }
+          },
+          {
+           "kind": "youtube#searchResult",
+           "etag": "\"OZTVc5giYjExcw9vrLsdrwdwB4c/UMGAIOVjbYSBmKLUhfhzIS3O2yU\"",
+           "id": {
+            "kind": "youtube#video",
+            "videoId": "FdDgo5IRhZE"
+           },
+           "snippet": {
+            "publishedAt": "2012-03-03T18:09:06.000Z",
+            "channelId": "UCKOakHAEve2Nn6qjw2eyiuQ",
+            "title": "21. \"Hogwarts' Hymn\" - Harry Potter and The Goblet of Fire Soundtrack",
+            "description": "By Patrick Doyle.",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/FdDgo5IRhZE/default.jpg"
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/FdDgo5IRhZE/mqdefault.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/FdDgo5IRhZE/hqdefault.jpg"
+             }
+            },
+            "channelTitle": "TheWizardingWiz",
+            "liveBroadcastContent": "none"
+           }
+          },
+          {
+           "kind": "youtube#searchResult",
+           "etag": "\"OZTVc5giYjExcw9vrLsdrwdwB4c/Nzls-p4AForJ8wRNIH75hgcshMs\"",
+           "id": {
+            "kind": "youtube#video",
+            "videoId": "QmBmrMrm3E0"
+           },
+           "snippet": {
+            "publishedAt": "2009-02-16T12:49:42.000Z",
+            "channelId": "UCTaqXam4FHoB_DsA4pxTv6Q",
+            "title": "Harry Potter and the Half-Blood Prince trailers",
+            "description": "3 trailers of the 6th movie, enjoy. Can't wait to see the whole movie, right! :3.",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/QmBmrMrm3E0/default.jpg"
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/QmBmrMrm3E0/mqdefault.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/QmBmrMrm3E0/hqdefault.jpg"
+             }
+            },
+            "channelTitle": "Nereidinja",
+            "liveBroadcastContent": "none"
+           }
+          },
+          {
+           "kind": "youtube#searchResult",
+           "etag": "\"OZTVc5giYjExcw9vrLsdrwdwB4c/63hxzgKi_JcWfKsnnrr8FlZVLFo\"",
+           "id": {
+            "kind": "youtube#video",
+            "videoId": "CO45K-NeyCo"
+           },
+           "snippet": {
+            "publishedAt": "2009-07-24T22:06:48.000Z",
+            "channelId": "UCINUX6EM17_3lHneotigr-g",
+            "title": "Harry Potter and the Half Blood Prince Review part 2",
+            "description": "It's still Harry Potter. Hope you enjoy.",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/CO45K-NeyCo/default.jpg"
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/CO45K-NeyCo/mqdefault.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/CO45K-NeyCo/hqdefault.jpg"
+             }
+            },
+            "channelTitle": "Narcoleptic23",
+            "liveBroadcastContent": "none"
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Sun, 05 Apr 2015 01:57:17 GMT
+recorded_with: VCR 2.9.3

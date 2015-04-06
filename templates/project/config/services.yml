@@ -1,0 +1,30 @@
+# This file should hold your various variables required by your services. SLACK_EDI_TOKEN is the only absolutely required variable, the
+# rest are optional depending on which built-in services you want to use. You should not check this file into source control
+
+# Bot User Integration Token. Create your bot user integration at https://YOURTEAM.slack.com/services/new#diy
+SLACK_EDI_TOKEN:
+
+# Slack API Token. Required for Tweet That Service. Generate token at https://api.slack.com/web
+SLACK_TOKEN:
+
+# Giphy Service Configuration. Public Beta API Key Included Below
+GIPHY_API_KEY: dc6zaTOxFJmzC
+GIPHY_API_VERSION: v1
+
+# Tweet That Service Variables
+TWITTER_ACCESS_TOKEN:
+TWITTER_CONSUMER_KEY:
+TWITTER_CONSUMER_SECRET:
+TWITTER_HANDLE:
+TWITTER_TOKEN_SECRET:
+
+# ImgFlip Service Variables. Set up a User at https://imgflip.com/signup
+IMGFLIP_USER:
+IMGFLIP_PASSWORD:
+
+# ZIP Code to use as the default location for the weather service.
+DEFAULT_LOCATION: 90210
+
+# Google API Key for Youtube Service. Set up an application on Google Developer Console, Set Youtube Data API to On and create a
+# Public API Key. Start Here: https://console.developers.google.com/
+GOOGLE_API_KEY:
