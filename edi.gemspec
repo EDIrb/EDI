@@ -36,4 +36,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "twitter"
   spec.add_dependency "rufus-scheduler"
   spec.add_dependency "faye-websocket"
+  spec.add_dependency "logging"
 end
