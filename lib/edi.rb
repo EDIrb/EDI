@@ -67,7 +67,7 @@ module EDI
     end
 
     def bot_token
-      self.config.bot_token
+      @bot_token ||= ENV["SLACK_EDI_TOKEN"]
     end
 
     def channels
