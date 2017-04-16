@@ -1,5 +1,7 @@
 # EDI [![Build Status](https://travis-ci.org/EDIrb/EDI.svg?branch=master)](https://travis-ci.org/EDIrb/EDI) [![Code Climate](https://codeclimate.com/github/EDIrb/EDI/badges/gpa.svg)](https://codeclimate.com/github/EDIrb/EDI)
 
+[![Join the chat at https://gitter.im/EDIrb/EDI](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/EDIrb/EDI?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ![EDI Demo](demo.gif)
 
 ## Installation
